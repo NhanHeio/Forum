@@ -16,7 +16,8 @@
 html{
     font-family: Roboto, "Helvetica Neue";
     /* font-size: 62.5%; */
-    
+    background-color: #F5F5F5;
+     
 }
 
 .grid{
@@ -43,6 +44,12 @@ html{
 
 .col-8{
     width:80%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.col-4{
+    width: 33.333%;
     padding-left: 12px;
     padding-right: 12px;
 }
@@ -131,9 +138,10 @@ html{
     /* margin: 10px 3rem; */
     width: 1600px;
     max-width:100%;
-    margin-top: 50px;
+    margin-top: 10px;
     margin-bottom: 20px;
-    
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
 .breadcrumbs li a{
@@ -251,6 +259,7 @@ html{
 .content-category{
     border-radius: 2px;
     background-color: #fff;
+    height:fit-content;
 }
 
 .category-heading{
@@ -283,5 +292,21 @@ html{
     background-color: #fff;
 }
 #footer{
+    border-top: 2px solid #888;
+}
 
+.footer-heading{
+    padding:0 30%;
+}
+
+.footer-author{
+    display: block;
+    padding: 0 30%;
+}
+
+.footer-link{
+    display: block;
+    padding: 0 30%;
+    text-decoration: none;
+    color: #888;
 }
