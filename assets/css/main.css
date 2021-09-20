@@ -287,6 +287,20 @@ html{
     display: block;
 }
 
+.vote{
+    cursor: pointer;
+    display: block;
+}
+
+.flag{
+    cursor: pointer;
+}
+
+.active{
+    color: red;
+    
+}
+
 .content-2{
     border-radius: 2px;
     background-color: #fff;
