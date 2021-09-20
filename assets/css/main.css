@@ -65,6 +65,7 @@ html{
     top: 0;
     right: 0;
     left: 0;
+    z-index: 1000 !important;
 }
 
 #nav{
@@ -108,9 +109,63 @@ html{
     display: inline-block;
 }
 
+.nav-avt{
+    width: 25px;
+    height: 25px;
+    border-radius:50%;
+}
+
+.nav-user-item{
+    color: var(--white-color);
+    
+    line-height:47px;
+    padding: 0 12px;
+    
+}
+
+.name-user-hover{
+    position: absolute;
+    padding:8px 0;
+    /* margin-top: 8px; */
+    top: 100%;
+    right: 90px;
+    width: 160px;
+    background-color: var(--white-color);
+    border-radius: 2px;
+    list-style: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.name-user-item a{
+    text-decoration: none;
+    color: var(--black-color);
+    font-size: 1rem;
+    padding: 6px 16px;
+    display: block;
+}
+
+.nav-user-item:hover .name-user-hover{
+    display: block;
+}
+
+.name-user-item{
+    background-color: var(--white-color);
+}
+
 #nav_right li:hover a{
     color: var(--white-color);
     background-color: var(--hover-color);
+}
+
+#nav_right li:hover .name-user-item-link{
+    background-color: var(--white-color) ;
+    color: var(--black-color) ;
+}
+
+.name-user-item-link{
+    display: block;
+    padding: auto;
 }
 
 #header .icon_seach{
@@ -136,12 +191,13 @@ html{
     background-color: #0e549c;
     height:100px;
     /* margin: 10px 3rem; */
-    width: 1600px;
+    width: 1300px;
     max-width:100%;
     margin-top: 10px;
     margin-bottom: 20px;
     padding-left: 12px;
     padding-right: 12px;
+
 }
 
 .breadcrumbs li a{
