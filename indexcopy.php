@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css">
     <title>Document</title>
 </head>
+<?php  include "signup.php" ?>
+<?php  include "login.php" ?>
 <body>
     <script src="./assets/js/jquery.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/poper.js/1.14.7/umd/poper.min.js"></script> -->
@@ -45,7 +47,14 @@
                 </ul>
             </div>
         </div>
-        
+          <div class="row" id="content">
+            <div class="owl-carousel owl-theme advertisement">
+                <div class="item"><h1>Quảng cáo 1</h1></div>
+                <div class="item"><h1>Quảng cáo 2</h1></div>
+                <div class="item"><h1>Quảng cáo 3</h1></div>
+                <div class="item"><h1>Quảng cáo 4</h1></div>
+            </div>
+            </div>
             <div class="row" id="content">
                 
                 <div class="col-2">
@@ -55,30 +64,29 @@
                             <span onclick="register()">Đăng ký</span>
                             <hr id="Indicator">
                         </div>
-    
-                        <form action="#" method="POST" id="LoginForm">
+                        <div class="note"><p><?php signup(); ?></p></div>
+                       <div class="note"><p><?php login(); ?></p></div>
+                        <form action="" method="POST" id="LoginForm">
                             <input name="taikhoan" id="taikhoan" type="text" placeholder="Tài khoản">
                             <input name="matkhau" id="matkhau" type="password" placeholder="Mật khẩu">
                             <button name="dangnhap" type="submit" class="btn">Đăng nhập</button>
                             <a href="">Forgot password</a>
                         </form>
     
-                        <form action="#" method="POST" id="RegForm">
+                        <form action="" method="POST" id="RegForm">
                             <input name="taikhoan1" type="text" placeholder="Tài khoản">
-                            <input type="email" placeholder="Email">
+                            <input name="emai1" type="email" placeholder="Email">
                             <input name="matkhau1" type="password" placeholder="Mật khẩu">
                             <button name="dangky" id="dangky" type="submit" class="btn">Đăng ký</button>
                         </form>
     
                     </div>
                 </div>
-                
-                    
-                    
+
                 
             </div>
                
-            
+            <br><br><br><br>
         
 
         <div id="footer">
