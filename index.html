@@ -35,7 +35,7 @@
                     </li>
                     <li class="nav-user-item">Hồ Trung Nhân
                         <ul class="name-user-hover" style="list-style-type: none;padding: 0;">
-                            <li class="name-user-item" ><a class="name-user-item-link" href="#">Trang cá nhân</a></li>
+                            <li class="name-user-item" ><a class="name-user-item-link" href="personal.html">Trang cá nhân</a></li>
                             <li class="name-user-item" ><a class="name-user-item-link" href="#">Đăng xuất</a></li>
                         </ul>
                     </li>
@@ -73,7 +73,7 @@
                         </li>
                     </ul>
                 </div> <!-- Conten-category end-->
-                <!-- <div id="main-content" class="col-8 content-main">
+                 <div id="main-content" class="col-8 content-main">
                     <div class="breadcrumbs">
                         <ul style="list-style-type: none">
                             <li><a href="">Trang chủ </a><i class="far fa-angle-right"></i></li>
@@ -82,7 +82,7 @@
                     <div class="p-title">
                         <div class="p-title-value"><h3>Forum cộng đồng IT</h3></div>
                         <div class="p-title-actionPage">
-                            <a href="" class="button"><i class="bolt fal fa-bolt"></i>Bài viết mới</a>
+                            <button onclick="post()" class="btn-add"><i class="bolt fal fa-bolt"></i>Bài viết mới</button>
                         </div>
                     </div>
                     <div class="admin-noti">
@@ -136,8 +136,10 @@
                             </div>
                         </div>
                     </div>
-                </div> --> <!--main content end-->
-                <div id="post-question" class="col-8">
+                </div>  
+                <!--main content end-->
+
+                 <div id="post-question" class="col-8 class-none"> 
                     <div class="breadcrumbs">
                         <ul style="list-style-type: none; list-style: none; ;display:inline">
                             <li style="display:inline" ><a href="index.html">Trang chủ </a><i class="far fa-angle-right"></i></li>
@@ -235,9 +237,12 @@
                     <input class="input-1" name="tag-question" type="text" placeholder="Tags">
                     <div class="button-class">
                         <button class="btn-submit">Submit</button>
-                        <button class="btn-cancel">Hủy</button>
+                        <button onclick="cancel();" class="btn-cancel">Hủy</button>
                     </div>
-                </div>  
+                </div>
+                <!--Post quetion end -->
+                
+
             </div>
         </div>
 

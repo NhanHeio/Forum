@@ -24,4 +24,12 @@ $(document).ready(function(){
         }
     });
 });
+function post(){
+    document.getElementById("main-content").style.display="none";
+    document.getElementById("post-question").style.display="block";
+}
+function cancel(){
+    document.getElementById("main-content").style.display="block";
+    document.getElementById("post-question").style.display="none";
+}
 

@@ -224,7 +224,7 @@ html{
     color: var(--white-color);
 }
 
-.button{
+.btn-add{
     display: inline-block;
     display: inline-flex;
     align-items: center;
@@ -320,11 +320,13 @@ html{
     border-radius: 2px;
     background-color: #fff;
     height:fit-content;
+    border-radius: 5px;
 }
 
 .category-heading{
     font-size: 1.7rem;
     padding: 8px 8px;
+    border-bottom: 1px solid #888;
 }
 
 .category-icon{
@@ -367,6 +369,8 @@ html{
 }
 #footer{
     border-top: 2px solid #888;
+    display:flex;
+    justify-content: space-around;
 }
 
 .footer-heading{
@@ -383,4 +387,8 @@ html{
     padding: 0 30%;
     text-decoration: none;
     color: #888;
+}
+
+.class-none{
+    display: none;
 }
