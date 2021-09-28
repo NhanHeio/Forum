@@ -8,17 +8,15 @@
     <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="./assets/css/owl.theme.green.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/texteditor.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css">
     <title>Document</title>
 </head>
 <body>
-    <script src="./assets/js/jquery.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/poper.js/1.14.7/umd/poper.min.js"></script> -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="./assets/js/owl.carousel.min.js"></script>
-    <script src="./assets/js/main.js"></script>
+    
     <div id="main">
-        <div id="header">
+        
+        <div class="grid" id="header">
             <div id="nav">
                 <ul style="list-style-type: none">
                     <li><span style="color:white">FORUM IT </span></li>
@@ -30,8 +28,8 @@
             </div>
             <div id="nav_right">
                 <ul style="list-style-type: none">
-                    <!-- <li><a href="">Đăng nhập</a></li>
-                    <li><a href="">Đăng ký</a></li> -->
+                    <!-- <li><a href="sign.php">Đăng nhập</a></li>
+                    -->
                     <li>
                         <img class="nav-avt" src="./assets/img/avatar.jpg" alt="avt">
                     </li>
@@ -45,7 +43,7 @@
                 </ul>
             </div>
         </div>
-        
+        <div class="grid">
             <div class="row" id="content">
                 <div class="owl-carousel owl-theme advertisement">
                     <div class="item"><h1>Quảng cáo 1</h1></div>
@@ -74,8 +72,8 @@
                             <a href="#" class="category-item-link">Thành viên mới</a>
                         </li>
                     </ul>
-                </div>
-                <div class="col-8 content-main">
+                </div> <!-- Conten-category end-->
+                <!-- <div id="main-content" class="col-8 content-main">
                     <div class="breadcrumbs">
                         <ul style="list-style-type: none">
                             <li><a href="">Trang chủ </a><i class="far fa-angle-right"></i></li>
@@ -138,10 +136,110 @@
                             </div>
                         </div>
                     </div>
-                </div>
-               
+                </div> --> <!--main content end-->
+                <div id="post-question" class="col-8">
+                    <div class="breadcrumbs">
+                        <ul style="list-style-type: none; list-style: none; ;display:inline">
+                            <li style="display:inline" ><a href="index.html">Trang chủ </a><i class="far fa-angle-right"></i></li>
+                            <li style="display:inline"><a href="">Bài viết mới </a><i class="far fa-angle-right"></i></li>
+                        </ul>
+                    </div>
+                    <h1 class="page-title">Bài viết mới</h1>
+                    <h6>Tiêu đề</h6>
+                    <input class="input-1" name="title-question" type="text">
+                    <div class="flex-box">
+                        <button class="btn-text" type="button"
+                        onclick="f1()"
+                        class=" shadow-sm btn btn-outline-secondary"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Bold Text">
+                        <i class="far fa-bold"></i>
+                </button>
+                <button class="btn-text" type="button"
+                        onclick="f2()"
+                        class="shadow-sm btn btn-outline-success"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Italic Text">
+                        <i class="far fa-italic"></i>
+                </button>
+                <button class="btn-text" type="button"
+                        onclick="f3()"
+                        class=" shadow-sm btn btn-outline-primary"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Left Align">
+                        <i class="fas fa-align-left"></i>
+                </button>
+                <button class="btn-text" type="button"
+                        onclick="f4()"
+                        class="btn shadow-sm btn-outline-secondary"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Center Align">
+                        <i class="fas fa-align-center"></i>
+                </button>
+                <button class="btn-text" type="button"
+                        onclick="f5()"
+                        class="btn shadow-sm btn-outline-primary"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Right Align">
+                        <i class="fas fa-align-right"></i>
+                </button>
+                <button class="btn-text" type="button"
+                        onclick="f6()"
+                        class="btn shadow-sm btn-outline-secondary"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Uppercase Text">
+                        Upper Case
+                </button>
+                <button class="btn-text" type="button"
+                        onclick="f7()"
+                        class="btn shadow-sm btn-outline-primary"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Lowercase Text">
+                        Lower Case
+                </button>
+                <button class="btn-text" type="button"
+                        onclick="f8()"
+                        class="btn shadow-sm btn-outline-primary"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Capitalize Text">
+                        Capitalize
+                </button>
+                <button class="btn-text" type="button"
+                        onclick="f9()"
+                        class="btn shadow-sm btn-outline-primary side"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Tooltip on top">
+                        Clear Text
+                </button>
+                    </div>
+                    <h6>Nội dung</h6>
+                    <div class="flex-box">
+                        <textarea id="textarea1"
+                                class="input shadow"
+                                name="name"
+                                rows="15"
+                                cols="150">
+                            </textarea>
+                    </div>
+                    <h6>Tags</h6>
+                    <span style="display: block">Thêm tối đa 5 tag cho câu hỏi (Ngăn cách bằng dấu phẩy ,)</span>
+                    <input class="input-1" name="tag-question" type="text" placeholder="Tags">
+                    <div class="button-class">
+                        <button class="btn-submit">Submit</button>
+                        <button class="btn-cancel">Hủy</button>
+                    </div>
+                </div>  
             </div>
-        
+        </div>
 
         <div id="footer">
             <div class="row">
@@ -177,5 +275,12 @@
 
         </div>
     </div>
+    <!--External Js File-->
+    <script src="./assets/js/jquery.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/poper.js/1.14.7/umd/poper.min.js"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/texteditor.js"></script>
 </body>
 </html>

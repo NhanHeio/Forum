@@ -1,0 +1,49 @@
+.page-title{
+    padding-top: 40px;
+    padding-bottom: 20px;
+    text-align: left;
+    color: #957dad;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.input-1{
+    width: 50%;
+    padding: auto;
+}
+
+.btn-text {
+    width: fit-content;
+    min-width: 40px;
+    margin-top: 15px;
+    border-color: #957dad !important;
+    color: #888888 !important;
+    margin-bottom: 25px;
+}
+
+.btn-text:hover {
+    background-color: #555 !important;
+}
+
+textarea {
+    padding: 3%;
+    border-color: #957dad;
+    border-width: thick;
+}
+
+.button-class{
+    padding: 10px;
+}
+
+.btn-submit{
+    background-color:#3366FF;
+    color: white;
+    border: none;
+    width:60px;
+}
+
+.btn-cancel{
+    background-color: #888;
+    color: black;
+    border: none;
+    width: 50px;
+}
