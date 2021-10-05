@@ -1,0 +1,23 @@
+CREATE TABLE `forum`.`user` ( `UserID` INT(5) NOT NULL , `name` VARCHAR(50) NOT NULL , `birthday` DATE NOT NULL , `mail` VARCHAR(50) NOT NULL , `password` VARCHAR(32) NOT NULL , `phoneNumber` INT(10) NOT NULL , `avatar` VARCHAR(50) NOT NULL , PRIMARY KEY (`UserID`)) ENGINE = InnoDB;
+
+CREATE TABLE `forum`.`admin` ( `adminID` INT(5) NOT NULL , `name` VARCHAR(50) NOT NULL , `mail` VARCHAR(50) NOT NULL , `password` VARCHAR(32) NOT NULL , PRIMARY KEY (`adminID`)) ENGINE = InnoDB;
+
+CREATE TABLE `forum`.`question` ( `queID` INT(5) NOT NULL , `userID` INT(5) NOT NULL , `topic` VARCHAR(100) NOT NULL , `Content` VARCHAR(255) NOT NULL , `tags` VARCHAR(50) NOT NULL , `img` VARCHAR(50) NOT NULL , `voteUp` INT(5) NOT NULL , `voteDown` INT(5) NOT NULL , `flag` INT(5) NOT NULL , PRIMARY KEY (`queID`)) ENGINE = InnoDB;
+
+CREATE TABLE `forum`.`answer` ( `ansID` INT(5) NOT NULL , `queID` INT(5) NOT NULL , `userID` INT(5) NOT NULL , `content` VARCHAR(255) NOT NULL , `voteUp` INT(5) NOT NULL , `voteDown` INT(5) NOT NULL , PRIMARY KEY (`ansID`)) ENGINE = InnoDB;
+
+ALTER TABLE question ADD FOREIGN KEY(userID) REFERENCES user(userID);
+
+ALTER TABLE answer ADD FOREIGN KEY(userID) REFERENCES user(userID);
+
+ALTER TABLE answer ADD FOREIGN KEY(queID) REFERENCES question(queID);   
+
+/*insert into user*/
+
+INSERT INTO `user`(`UserID`, `name`, `birthday`, `mail`, `password`, `phoneNumber`, `avatar`) VALUES (1,'Ho Trung Nhan','30/10/2000','hotrungnhan2000@gmail.com','123',0774000828,'')
+INSERT INTO `user`(`UserID`, `name`, `birthday`, `mail`, `password`, `phoneNumber`, `avatar`) VALUES (2,'Vo Van Khanh','2000-01-01','vovankhanh2000@gmail.com','123',562635394,'')
+
+
+/*insert into admin*/
+INSERT INTO `admin` (`adminID`, `name`, `mail`, `password`) VALUES ('1', 'Ho Trung Nhan', 'nhanb1805898@student.ctu.edu.vn', 'nhan2000');
+

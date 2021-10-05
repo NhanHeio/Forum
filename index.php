@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<?php
+    session_start();
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,24 +24,31 @@
                 <ul style="list-style-type: none">
                     <li><span style="color:white">FORUM IT </span></li>
                     <li><i style="color:white; padding: 0 12px;" class="far fa-grip-lines-vertical"></i></li>
-                    <li><a href="">Trang chủ</a></li>
+                    <li><a href="index.php">Trang chủ</a></li>
                     <li><a href="">Bài viết mới</a></li>
                     <li><a href="">Thành viên</a></li>
                 </ul>
             </div>
             <div id="nav_right">
                 <ul style="list-style-type: none">
-                    <!-- <li><a href="sign.php">Đăng nhập</a></li>
-                    -->
-                    <li>
-                        <img class="nav-avt" src="./assets/img/avatar.jpg" alt="avt">
-                    </li>
-                    <li class="nav-user-item">Hồ Trung Nhân
-                        <ul class="name-user-hover" style="list-style-type: none;padding: 0;">
-                            <li class="name-user-item" ><a class="name-user-item-link" href="personal.html">Trang cá nhân</a></li>
-                            <li class="name-user-item" ><a class="name-user-item-link" href="#">Đăng xuất</a></li>
-                        </ul>
-                    </li>
+                    <?php
+                        if(isset($_SESSION["name"])){
+  
+                            echo '<li>
+                                <img class="nav-avt" src="./assets/img/'.$_SESSION['avt'].'.jpg" alt="avt">
+                            </li>
+                            <li class="nav-user-item">'.$_SESSION['name'].'
+                                <ul class="name-user-hover" style="list-style-type: none;padding: 0;">
+                                    <li class="name-user-item" ><a class="name-user-item-link" href="personal.html">Trang cá nhân</a></li>
+                                    <li class="name-user-item" ><a class="name-user-item-link" href="logout.php">Đăng xuất</a></li>
+                                </ul>
+                            </li>';
+                        }else{
+                            echo'<li><a href="sign.php">Đăng nhập</a></li>';
+                        }
+                   
+
+                    ?>
                     <li><i class="icon_seach fal fa-search"></i></li>
                 </ul>
             </div>

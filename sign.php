@@ -25,7 +25,7 @@
                 <ul style="list-style-type: none">
                     <li><span style="color:white">FORUM IT </span></li>
                     <li><i style="color:white; padding: 0 12px;" class="far fa-grip-lines-vertical"></i></li>
-                    <li><a href="">Trang chủ</a></li>
+                    <li><a href="index.php">Trang chủ</a></li>
                     <li><a href="">Bài viết mới</a></li>
                     <li><a href="">Thành viên</a></li>
                 </ul>
@@ -33,8 +33,8 @@
             <div id="nav_right">
                 <ul style="list-style-type: none">
                     <li><a href="">Đăng nhập</a></li>
-                    <li><a href="">Đăng ký</a></li>
-                    <!-- <li>
+                    <!--<li><a href="">Đăng ký</a></li>
+                     <li>
                         <img class="nav-avt" src="./assets/img/avatar.jpg" alt="avt">
                     </li>
                     <li class="nav-user-item">Hồ Trung Nhân
@@ -67,14 +67,14 @@
                         <div class="note"><p><?php signup(); ?></p></div>
                        <div class="note"><p><?php login(); ?></p></div>
                         <form action="" method="POST" id="LoginForm">
-                            <input name="taikhoan" id="taikhoan" type="text" placeholder="Tài khoản">
+                            <input name="email" id="email" type="email" placeholder="Email">
                             <input name="matkhau" id="matkhau" type="password" placeholder="Mật khẩu">
                             <button name="dangnhap" type="submit" class="btn">Đăng nhập</button>
                             <a href="">Forgot password</a>
                         </form>
     
                         <form action="" method="POST" id="RegForm">
-                            <input name="taikhoan1" type="text" placeholder="Tài khoản">
+                            <input name="name" type="text" placeholder="Họ và tên">
                             <input name="emai1" type="email" placeholder="Email">
                             <input name="matkhau1" type="password" placeholder="Mật khẩu">
                             <button name="dangky" id="dangky" type="submit" class="btn">Đăng ký</button>
