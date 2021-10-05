@@ -161,77 +161,77 @@
                     <input class="input-1" name="title-question" type="text">
                     <div class="flex-box">
                         <button class="btn-text" type="button"
-                        onclick="f1()"
-                        class=" shadow-sm btn btn-outline-secondary"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Bold Text">
-                        <i class="far fa-bold"></i>
-                </button>
-                <button class="btn-text" type="button"
-                        onclick="f2()"
-                        class="shadow-sm btn btn-outline-success"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Italic Text">
-                        <i class="far fa-italic"></i>
-                </button>
-                <button class="btn-text" type="button"
-                        onclick="f3()"
-                        class=" shadow-sm btn btn-outline-primary"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Left Align">
-                        <i class="fas fa-align-left"></i>
-                </button>
-                <button class="btn-text" type="button"
-                        onclick="f4()"
-                        class="btn shadow-sm btn-outline-secondary"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Center Align">
-                        <i class="fas fa-align-center"></i>
-                </button>
-                <button class="btn-text" type="button"
-                        onclick="f5()"
-                        class="btn shadow-sm btn-outline-primary"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Right Align">
-                        <i class="fas fa-align-right"></i>
-                </button>
-                <button class="btn-text" type="button"
-                        onclick="f6()"
-                        class="btn shadow-sm btn-outline-secondary"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Uppercase Text">
-                        Upper Case
-                </button>
-                <button class="btn-text" type="button"
-                        onclick="f7()"
-                        class="btn shadow-sm btn-outline-primary"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Lowercase Text">
-                        Lower Case
-                </button>
-                <button class="btn-text" type="button"
-                        onclick="f8()"
-                        class="btn shadow-sm btn-outline-primary"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Capitalize Text">
-                        Capitalize
-                </button>
-                <button class="btn-text" type="button"
-                        onclick="f9()"
-                        class="btn shadow-sm btn-outline-primary side"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Tooltip on top">
-                        Clear Text
-                </button>
+                            onclick="f1()"
+                            class=" shadow-sm btn btn-outline-secondary"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Bold Text">
+                            <i class="far fa-bold"></i>
+                        </button>
+                        <button class="btn-text" type="button"
+                            onclick="f2()"
+                            class="shadow-sm btn btn-outline-success"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Italic Text">
+                            <i class="far fa-italic"></i>
+                        </button>
+                        <button class="btn-text" type="button"
+                            onclick="f3()"
+                            class=" shadow-sm btn btn-outline-primary"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Left Align">
+                            <i class="fas fa-align-left"></i>
+                        </button>
+                        <button class="btn-text" type="button"
+                            onclick="f4()"
+                            class="btn shadow-sm btn-outline-secondary"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Center Align">
+                            <i class="fas fa-align-center"></i>
+                        </button>
+                        <button class="btn-text" type="button"
+                            onclick="f5()"
+                            class="btn shadow-sm btn-outline-primary"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Right Align">
+                            <i class="fas fa-align-right"></i>
+                        </button>
+                        <button class="btn-text" type="button"
+                            onclick="f6()"
+                            class="btn shadow-sm btn-outline-secondary"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Uppercase Text">
+                            Upper Case
+                        </button>
+                        <button class="btn-text" type="button"
+                            onclick="f7()"
+                            class="btn shadow-sm btn-outline-primary"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Lowercase Text">
+                            Lower Case
+                        </button>
+                        <button class="btn-text" type="button"
+                            onclick="f8()"
+                            class="btn shadow-sm btn-outline-primary"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Capitalize Text">
+                            Capitalize
+                        </button>
+                        <button class="btn-text" type="button"
+                            onclick="f9()"
+                            class="btn shadow-sm btn-outline-primary side"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Tooltip on top">
+                            Clear Text
+                        </button>
                     </div>
                     <h6>Nội dung</h6>
                     <div class="flex-box">
