@@ -40,7 +40,7 @@
                             <li class="nav-user-item">'.$_SESSION['name'].'
                                 <ul class="name-user-hover" style="list-style-type: none;padding: 0;">
                                     <li class="name-user-item" ><a class="name-user-item-link" href="personal.html">Trang cá nhân</a></li>
-                                    <li class="name-user-item" ><a class="name-user-item-link" href="logout.php">Đăng xuất</a></li>
+                                    <li class="name-user-item" ><a class="name-user-item-link" href="./php/logout.php">Đăng xuất</a></li>
                                 </ul>
                             </li>';
                         }else{
@@ -62,7 +62,6 @@
                     <div class="item"><h1>Quảng cáo 4</h1></div>
                 </div>
 
-
                 <div class="col-2 content-category">
                     <h3 class="category-heading"><i class="category-icon fal fa-list"></i> Danh mục</h3>
                     <ul style="list-style-type: none;" class="category-list">
@@ -82,7 +81,8 @@
                             <a href="#" class="category-item-link">Thành viên mới</a>
                         </li>
                     </ul>
-                </div> <!-- Conten-category end-->
+                </div> 
+                <!-- Conten-category end-->
                  <div id="main-content" class="col-8 content-main">
                     <div class="breadcrumbs">
                         <ul style="list-style-type: none">
@@ -157,98 +157,22 @@
                         </ul>
                     </div>
                     <h1 class="page-title">Bài viết mới</h1>
-                    <h6>Tiêu đề</h6>
-                    <input class="input-1" name="title-question" type="text">
-                    <div class="flex-box">
-                        <button class="btn-text" type="button"
-                            onclick="f1()"
-                            class=" shadow-sm btn btn-outline-secondary"
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="Bold Text">
-                            <i class="far fa-bold"></i>
-                        </button>
-                        <button class="btn-text" type="button"
-                            onclick="f2()"
-                            class="shadow-sm btn btn-outline-success"
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="Italic Text">
-                            <i class="far fa-italic"></i>
-                        </button>
-                        <button class="btn-text" type="button"
-                            onclick="f3()"
-                            class=" shadow-sm btn btn-outline-primary"
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="Left Align">
-                            <i class="fas fa-align-left"></i>
-                        </button>
-                        <button class="btn-text" type="button"
-                            onclick="f4()"
-                            class="btn shadow-sm btn-outline-secondary"
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="Center Align">
-                            <i class="fas fa-align-center"></i>
-                        </button>
-                        <button class="btn-text" type="button"
-                            onclick="f5()"
-                            class="btn shadow-sm btn-outline-primary"
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="Right Align">
-                            <i class="fas fa-align-right"></i>
-                        </button>
-                        <button class="btn-text" type="button"
-                            onclick="f6()"
-                            class="btn shadow-sm btn-outline-secondary"
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="Uppercase Text">
-                            Upper Case
-                        </button>
-                        <button class="btn-text" type="button"
-                            onclick="f7()"
-                            class="btn shadow-sm btn-outline-primary"
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="Lowercase Text">
-                            Lower Case
-                        </button>
-                        <button class="btn-text" type="button"
-                            onclick="f8()"
-                            class="btn shadow-sm btn-outline-primary"
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="Capitalize Text">
-                            Capitalize
-                        </button>
-                        <button class="btn-text" type="button"
-                            onclick="f9()"
-                            class="btn shadow-sm btn-outline-primary side"
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="Tooltip on top">
-                            Clear Text
-                        </button>
-                    </div>
-                    <h6>Nội dung</h6>
-                    <div class="flex-box">
+                    <form action="./php/postquestion.php" method="post">   
+                        <h6>Tiêu đề</h6>
+                        <input class="input-1" name="title-question" type="text">
+                        <h6>Nội dung</h6>
                         <textarea id="textarea1"
-                                class="input shadow"
-                                name="name"
-                                rows="15"
-                                cols="150">
-                            </textarea>
-                    </div>
-                    <h6>Tags</h6>
-                    <span style="display: block">Thêm tối đa 5 tag cho câu hỏi (Ngăn cách bằng dấu phẩy ,)</span>
-                    <input class="input-1" name="tag-question" type="text" placeholder="Tags">
-                    <div class="button-class">
-                        <button class="btn-submit">Submit</button>
-                        <button onclick="cancel();" class="btn-cancel">Hủy</button>
-                    </div>
+                                    class="input shadow"
+                                    name="content-question"
+                                    ></textarea>
+                        <h6>Tags</h6>
+                        <span style="display: block">Thêm tối đa 5 tag cho câu hỏi (Ngăn cách bằng dấu phẩy ,)</span>
+                        <input class="input-1" name="tag-question" type="text" placeholder="Tags">
+                        <div class="button-class">
+                            <button name="submit" type="submit"class="btn-submit">Submit</button>
+                            <button onclick="cancel();" class="btn-cancel">Hủy</button>
+                        </div>
+                    </form>
                 </div>
                 <!--Post quetion end -->
                 
@@ -296,6 +220,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="./assets/js/owl.carousel.min.js"></script>
     <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/texteditor.js"></script>
+    <script src="//cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('content-question');
+    </script>
 </body>
 </html>

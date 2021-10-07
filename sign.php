@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css">
     <title>Document</title>
 </head>
-<?php  include "signup.php" ?>
-<?php  include "login.php" ?>
+<?php  include "./php/signup.php" ?>
+<?php  include "./php/login.php" ?>
 <body>
     <script src="./assets/js/jquery.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/poper.js/1.14.7/umd/poper.min.js"></script> -->

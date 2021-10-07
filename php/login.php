@@ -9,9 +9,11 @@
     	
     	$result=mysqli_query($conn,$sql);
     	$r = mysqli_fetch_assoc($result);
+		$userID = $r['UserID'];
 		$name = $r['name'];
 		$avt = $r['avatar'];
     	if(mysqli_num_rows($result)!=0){
+			$_SESSION["userID"] = $userID;
             $_SESSION["name"]= $name;
 			$_SESSION["avt"]= $avt;
 			header('Location:index.php');
