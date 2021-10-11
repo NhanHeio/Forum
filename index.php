@@ -1,5 +1,7 @@
 ﻿<?php
     session_start();
+    require_once './php/connect.php';
+    require './php/php_function.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -115,36 +117,10 @@
                             <span class="p-admin-noti-title">
                             Bài viết đáng chú ý</span>
                         </div>
-                        <div class="top-post-content">
-                            <a href="">Bài viết số 1</a>
-                            <a href="">Hồ Trung Nhân</a>
-                            <div class="post-react">
-                                <span>100 <i class="vote fal fa-angle-up"></i></span>
-                                <span>100 <i class="vote fal fa-angle-down"></i></span>
-                                <span>100 <i class="fal fa-comment"></i></span>
-                                <span><i class="flag fal fa-flag"></i></span>
-                            </div>
-                        </div>
-                        <div class="top-post-content">
-                            <a href="">Bài viết số 2</a>
-                            <a href="">Võ Văn Khánh</a>
-                            <div class="post-react">
-                                <span>100 <i class="vote fal fa-angle-up"></i></span>
-                                <span>100 <i class="vote fal fa-angle-down"></i></span>
-                                <span>100 <i class="fal fa-comment"></i></span>
-                                <span><i class="flag fal fa-flag"></i></span>
-                            </div>
-                        </div>
-                        <div class="top-post-content">
-                            <a href="">Bài viết số 3</a>
-                            <a href="">Đinh Hiếu Nghĩa</a>
-                            <div class="post-react">
-                                <span>100 <i class="vote fal fa-angle-up"></i></span>
-                                <span>100 <i class="vote fal fa-angle-down"></i></span>
-                                <span>100 <i class="fal fa-comment"></i></span>
-                                <span><i class="flag fal fa-flag"></i></span>
-                            </div>
-                        </div>
+                        <?php
+                            getDataIndex();
+                        ?>
+                        
                     </div>
                 </div>  
                 <!--main content end-->

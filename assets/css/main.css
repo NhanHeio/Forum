@@ -392,3 +392,92 @@ html{
 .class-none{
     display: none;
 }
+
+
+/*question-detail*/
+
+.question{
+	font-size: 30px;
+}
+.quesitondetail{
+	margin-left: 200px;
+	margin-right: 200px;
+}
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.up1{
+	position: absolute;
+	top: 130px;
+	left: 140px;
+
+}
+.down1{
+	position: absolute;
+	top: 200px;
+	left: 140px;
+}
+.stt{
+	font-size: 20px;
+	position: absolute;
+	left: 145px;
+	top: 165px;
+}
+.h2{
+	margin-left: 200px;
+}
+.allcomment{
+	margin-left: 200px;
+	margin-right: 300px;
+	margin-top: 20px;
+}
+.comment_datel{
+	width: 1000px;
+	height: 200px;
+	background-color: #E8E8E8;
+}
+.comment{
+	margin-top: 10px;
+}
+.like{
+	margin-left: 150px;
+	margin-top: 10px;
+}
+.person{
+	margin-left: -100px;
+	
+}
+.reperson{
+	margin-top: 30px;
+}
+.allcomment img{
+	object-fit: cover;
+	border-radius: 50%;
+}
+ .con1 header{
+	display: flex;
+}
+ .con1 header .datal{
+	margin-left: 25px;
+}
+.reperson .con1 header{
+	display: flex;
+}
+.share{
+	font-size: 20px;
+	margin-left: 200px;
+	margin-top: 20px;
+}
