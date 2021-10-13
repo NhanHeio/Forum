@@ -21,10 +21,11 @@
     <div class="quesitondetail">
         <div class="question">Vo van khanh khanh van vo ho trung nhan dinh hieu nghia vo van khanh vo van khanh vo van khanh vo van khanh vo van khanh vo van khanh vo van khanh vo van khanh vo van khanh voa </div>
         <br>
-        <button style="width: 20px; height: 20px;" class="up1"><i class="arrow up"></i></button> <br>
+        <button style="width: 20px; height: 20px;" class="up1"><i class="vote fal fa-angle-up"></i></button> <br>
         <p class="stt">1</p>
-        <button style="width: 20px; height: 20px;" class="down1"><i class="arrow down"></i></button>
-        <div style="width: 1300px; height: 200px;background-color: #E8E8E8;">
+        <button style="width: 20px; height: 20px;" class="down1"><i class="vote fal fa-angle-down"></i></button>
+        <div style="width: 1300px; height: fit-content;background-color: #E8E8E8;">
+            
              <!-- <textarea id="textarea1" class="input shadow" name="content-question" style="width: 1300px; height: 200px;
                    background-color: #E8E8E8;">
             khai niem duong cao toc duoc hieu the nao la dung
@@ -33,6 +34,9 @@
                                  dinh hieu nghia
                                           ho trung nhan
             </textarea> -->
+            <p>C&aacute;ch d&ugrave;ng thẻ Ul kh&ocirc;ng c&oacute; k&iacute; hiệu ph&iacute;a trước</p>
+
+
         </div>
     </div>
     <h2 class="h2">All comment</h2>
@@ -79,7 +83,7 @@
         <form action="" method="POST" style="width:1200px">
             <textarea name="comment" id="textarea1"></textarea>
             <div class="button-class">
-                <button name="submit" type="submit"class="btn-submit">Submit</button>
+                <button name="submit" type="submit"class="btn-submit">Post Your Answer</button>
             </div>
         </form>
     </div>
