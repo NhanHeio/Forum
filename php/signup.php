@@ -1,7 +1,5 @@
 <?php
     function signup(){
-	session_start();
-    $output="";
 	require 'connect.php';
    if(isset($_POST["dangky"])){
    	 $name=$_POST["name"];
@@ -19,10 +17,10 @@
    	 	else{
             echo "<div class='note'><p style ='color: red;'> Đắng ký thành công </p></div>";
    	 		$sql="INSERT INTO `user`(name, mail, password) VALUES('$name','$mail', '$matkhau')";
-   			mysqli_query($conn,$sql);
-   	 		 
+   			$result = mysqli_query($conn,$sql);
    	 	}
 		mysqli_free_result($kt);
+		mysqli_free_result($result);
    	 }
    }
 }

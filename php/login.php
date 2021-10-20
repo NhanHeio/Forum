@@ -1,6 +1,5 @@
 <?php
     function login(){
-		session_start();
         require 'connect.php';
     if(isset($_POST["dangnhap"])){
     	$email=$_POST["email"];

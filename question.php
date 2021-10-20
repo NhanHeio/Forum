@@ -1,8 +1,7 @@
-﻿<?php
+<?php
     session_start();
     require_once './php/connect.php';
     require './php/php_function.php';
-    $_SESSION['index']="";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +34,7 @@
             <div id="nav_right">
                 <ul style="list-style-type: none">
                     <?php
-                        if(isset($_SESSION["name"])&& $_SESSION['name']){
+                        if(isset($_SESSION["name"])){
   
                             echo '<li>
                                 <img class="nav-avt" src="./assets/img/'.$_SESSION['avt'].'.jpg" alt="avt">
@@ -52,21 +51,7 @@
                    
 
                     ?>
-                    <li class="search-button"><i class="icon_seach fal fa-search"></i>
-                
-                    <div class="search_space">
-                        <form action="php/search.php" method="get">
-                            <h5 style="margin:4px">Search</h5>
-                            <hr>
-                            <input style="display:block" class="search-input" type="text" placeholder="Search..." name="search_topic">
-                            <label style="margin-left:10px" for="search_member">By:</label>
-                            <input style="display:block" class="search-input" type="text" placeholder="Member" name="search_member">
-                            <button id="search" style="float:right; margin-bottom:20px; margin-right:30px" name="submit" class="btn btn-primary">
-                                Search
-                            </button>
-                        </form>
-                    </div>
-                    </li>
+                    <li><i class="icon_seach fal fa-search"></i></li>
                 </ul>
             </div>
         </div>
@@ -82,7 +67,7 @@
                 <div class="col-2 content-category">
                     <h3 class="category-heading"><i class="category-icon fal fa-list"></i> Danh mục</h3>
                     <ul style="list-style-type: none;" class="category-list">
-                        <li class="category-item">
+                    <li class="category-item">
                             <a id="category-all-post" class="category-item-link">Tất cả bài viết</a>
                         </li>
                         <li class="category-item">
@@ -94,83 +79,52 @@
                         <li class="category-item">
                             <a id="category-member" class="category-item-link">Thành viên</a>
                         </li>
-                        
                     </ul>
                 </div> 
                 <!-- Conten-category end-->
-                 <div id="main-content" class="col-8 content-main">
-                    <div class="breadcrumbs">
-                        <ul style="list-style-type: none">
-                            <li><a href="index.php">Trang chủ </a><i class="far fa-angle-right"></i></li>
-                        </ul>
-                    </div>
-                    <div class="p-title">
-                        <div class="p-title-value"><h3>Forum cộng đồng IT</h3></div>
-                        <div class="p-title-actionPage">
-                            <button id="change-to-post" class="change-button btn-add"><i class="bolt fal fa-bolt"></i>Bài viết mới</button>
-                        </div>
-                    </div>
-                    <div class="admin-noti">
-                        <div class="admin-noti-title">
-                            <span class="p-admin-noti-title">
-                                Thông báo từ Ban quản trị Forum
-                            </span>
-                        </div>
-                        <div class="admin-noti-content">
-                            <a href="">Nội quy của Forum</a>
-                            <a href="">Hồ Trung Nhân</a>
-                        </div>
-                        <div class="admin-noti-content">
-                            <a href="">Hướng dẫn đăng bài</a>
-                            <a href="">Hồ Trung Nhân</a>
-                        </div>
-                    </div>
-                    <div id="index_load" class="top-post">
-                        <div class="top-post-title">
-                            <span class="p-admin-noti-title">
-                            Bài viết đáng chú ý</span>
-                        </div>
-                        <?php
-                            getDataIndex($_SESSION['index']);
-                        ?>
-                        
-                    </div>
-                    
-                </div>  
-                <!--main content end-->
+                <div id="main-content" class="col-8 content-main">
+                    <!--Load question content-->
+                <?php
 
-                 <!-- <div id="post-question" class="col-8 class-none"> 
-                    <div class="breadcrumbs">
-                        <ul style="list-style-type: none; list-style: none; ;display:inline">
-                            <li style="display:inline" ><a href="index.php">Trang chủ </a><i class="far fa-angle-right"></i></li>
-                            <li style="display:inline"><a href="">Bài viết mới </a><i class="far fa-angle-right"></i></li>
-                        </ul>
-                    </div>
-                    <h1 class="page-title">Bài viết mới</h1>
-                    <form action="./php/postquestion.php" method="post">   
-                        <h6>Tiêu đề</h6>
-                        <input class="input-1" name="title-question" type="text">
-                        <h6>Nội dung</h6>
-                        <textarea id="ckeditor-post"
-                                    class="input shadow"
-                                    name="content-question"
-                                    ></textarea>
-                        <h6>Tags</h6>
-                        <span style="display: block">Thêm tối đa 5 tag cho câu hỏi (Ngăn cách bằng dấu phẩy ,)</span>
-                        <input class="input-1" name="tag-question" type="text" placeholder="Tags">
-                        <div class="button-class">
-                            <button name="submit" type="submit"class="btn-submit">Submit</button>
-                            <button onclick="cancel();" id="change-to-index" class="change-button btn-cancel">Hủy</button>
+                    echo '<div id="question-space" class="quesitondetail">
+                        <div class="vote-area">
+                            <i id="vote-up-'.$_SESSION["idQuestion"] .'" style="font-size:50px" class="vote fal fa-angle-up"></i> <br>
+                            <span class="vote-up-'.$_SESSION["idQuestion"] .'" style="font-size:20px">'.$_SESSION["voteUp"].'</span><br>
+                            <i id="vote-down-'.$_SESSION["idQuestion"] .'" style="font-size:50px" class="vote fal fa-angle-down"></i>
                         </div>
-                    </form>
-                </div> -->
-                <!--Post quetion end -->
-                
+                        <div class="question"><span>'. $_SESSION["topic"] .'</span> </div>
+                        <br>
+                        <div style="width:max-width; height: fit-content;background-color: #E8E8E8;">
+                            '. $_SESSION["content"] .'
+                        </div>
+                    </div>';
+                  
 
-            </div>
+                ?>
+                    <h2 class="h2">All comment</h2>
+                    <div class="allcomment">
+                        <div class="comment_detail">
+                            <?php
+                                
+                                getComment($_SESSION["idQuestion"]);
+                            ?>
+                            <div>
+                                <form action="./php/postcomment.php" method="POST" style="width:max-width">
+                                    <textarea name="comment"></textarea>
+                                        <div class="button-class">
+                                            <button style="margin:10px" name="submit" type="submit"class="btn-submit">Post</button>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+            </div>  
+            <!--main content end-->
+
         </div>
+    </div>
 
-        <div id="footer">
+    <div class="grid" id="footer">
             <div class="row">
                 <div class="col-4">
                     <h3 class="footer-heading">Author</h3>
@@ -212,7 +166,8 @@
     <script src="./assets/js/main.js"></script>
     <script src="//cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace('content-question');
+
+        CKEDITOR.replace('comment');
     </script>
 </body>
 </html>
