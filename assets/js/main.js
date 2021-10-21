@@ -29,6 +29,19 @@ $(document).ready(function(){
     
 });
 
+function post(){
+    $('#main-content').addClass("class-none");
+    $('#post-question').removeClass("class-none");
+    // document.getElementById("post-question").removeClass("class-none");
+    // document.getElementById("main-content").addClass("class-none");
+}
+function cancel(){
+    $('#post-question').addClass("class-none");
+    $('#main-content').removeClass("class-none");
+    // document.getElementById("post-question").addClass("class-none");
+    // document.getElementById("main-content").removeClass("class-none");
+}
+
 //load main page and post question page
 $(document).ready(function() {
     $(".change-button").click(function(event) {
