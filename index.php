@@ -107,7 +107,7 @@
                     <div class="p-title">
                         <div class="p-title-value"><h3>Forum cộng đồng IT</h3></div>
                         <div class="p-title-actionPage">
-                            <button id="change-to-post" class="change-button btn-add"><i class="bolt fal fa-bolt"></i>Bài viết mới</button>
+                            <button onclick="post();" class="btn-add"><i class="bolt fal fa-bolt"></i>Bài viết mới</button>
                         </div>
                     </div>
                     <div class="admin-noti">
@@ -139,7 +139,7 @@
                 </div>  
                 <!--main content end-->
 
-                 <!-- <div id="post-question" class="col-8 class-none"> 
+                 <div id="post-question" class="col-8 class-none"> 
                     <div class="breadcrumbs">
                         <ul style="list-style-type: none; list-style: none; ;display:inline">
                             <li style="display:inline" ><a href="index.php">Trang chủ </a><i class="far fa-angle-right"></i></li>
@@ -160,10 +160,10 @@
                         <input class="input-1" name="tag-question" type="text" placeholder="Tags">
                         <div class="button-class">
                             <button name="submit" type="submit"class="btn-submit">Submit</button>
-                            <button onclick="cancel();" id="change-to-index" class="change-button btn-cancel">Hủy</button>
+                            <button onclick="cancel();" class="btn-cancel">Hủy</button>
                         </div>
                     </form>
-                </div> -->
+                </div>
                 <!--Post quetion end -->
                 
 
