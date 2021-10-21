@@ -212,7 +212,7 @@
     <script src="./assets/js/main.js"></script>
     <script src="//cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace('content-question');
+        CKEDITOR.replace('ckeditor-post');
     </script>
 </body>
 </html>
