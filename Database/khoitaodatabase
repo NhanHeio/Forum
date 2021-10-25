@@ -1,23 +1,179 @@
-CREATE TABLE `forum`.`user` ( `UserID` INT(5) NOT NULL AUTO_INCREMENT , `name` VARCHAR(50) NOT NULL , `birthday` DATE NOT NULL , `mail` VARCHAR(50) NOT NULL , `password` VARCHAR(32) NOT NULL , `phoneNumber` INT(10) NOT NULL , `avatar` VARCHAR(50) NOT NULL , PRIMARY KEY (`UserID`)) ENGINE = InnoDB;
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 25, 2021 at 01:28 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.9
 
-CREATE TABLE `forum`.`admin` ( `adminID` INT(5) NOT NULL AUTO_INCREMENT , `name` VARCHAR(50) NOT NULL , `mail` VARCHAR(50) NOT NULL , `password` VARCHAR(32) NOT NULL , PRIMARY KEY (`adminID`)) ENGINE = InnoDB;
-
-CREATE TABLE `forum`.`question` ( `queID` INT(5) NOT NULL AUTO_INCREMENT , `userID` INT(5) NOT NULL , `topic` VARCHAR(100) NOT NULL , `Content` VARCHAR(255) NOT NULL , `tags` VARCHAR(50) NOT NULL , `img` VARCHAR(50) NOT NULL , `voteUp` INT(5) NOT NULL , `voteDown` INT(5) NOT NULL , `flag` INT(5) NOT NULL , PRIMARY KEY (`queID`)) ENGINE = InnoDB;
-
-CREATE TABLE `forum`.`answer` ( `ansID` INT(5) NOT NULL AUTO_INCREMENT , `queID` INT(5) NOT NULL , `userID` INT(5) NOT NULL , `content` VARCHAR(255) NOT NULL , `voteUp` INT(5) NOT NULL , `voteDown` INT(5) NOT NULL , PRIMARY KEY (`ansID`)) ENGINE = InnoDB;
-
-ALTER TABLE question ADD FOREIGN KEY(userID) REFERENCES user(userID);
-
-ALTER TABLE answer ADD FOREIGN KEY(userID) REFERENCES user(userID);
-
-ALTER TABLE answer ADD FOREIGN KEY(queID) REFERENCES question(queID);   
-
-/*insert into user*/
-
-INSERT INTO `user`(`name`, `birthday`, `mail`, `password`, `phoneNumber`, `avatar`) VALUES ('Ho Trung Nhan','30/10/2000','hotrungnhan2000@gmail.com','123',0774000828,'')
-INSERT INTO `user`(`name`, `birthday`, `mail`, `password`, `phoneNumber`, `avatar`) VALUES ('Vo Van Khanh','2000-01-01','vovankhanh2000@gmail.com','123',562635394,'')
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
 
-/*insert into admin*/
-INSERT INTO `admin` (`name`, `mail`, `password`) VALUES ( 'Ho Trung Nhan', 'nhanb1805898@student.ctu.edu.vn', 'nhan2000');
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
+--
+-- Database: `forum`
+--
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getDataIndex` ()  BEGIN
+	select * from forum.question order by queID limit 10;
+END$$
+
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `answer`
+--
+
+CREATE TABLE `answer` (
+  `ansID` int(5) NOT NULL,
+  `queID` int(5) NOT NULL,
+  `userID` int(5) NOT NULL,
+  `content` varchar(255) NOT NULL,
+  `voteUp` int(5) NOT NULL,
+  `voteDown` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `question`
+--
+
+CREATE TABLE `question` (
+  `queID` int(5) NOT NULL,
+  `userID` int(5) NOT NULL,
+  `topic` varchar(100) NOT NULL,
+  `Content` text NOT NULL,
+  `tags` varchar(50) NOT NULL,
+  `img` varchar(50) NOT NULL,
+  `voteUp` int(5) NOT NULL,
+  `voteDown` int(5) NOT NULL,
+  `flag` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `question`
+--
+
+INSERT INTO `question` (`queID`, `userID`, `topic`, `Content`, `tags`, `img`, `voteUp`, `voteDown`, `flag`) VALUES
+(2, 3, 'Cách nhúng SCSS vào HTML', '<p>L&agrave;m thế n&agrave;o để file HTML c&oacute; thể nhận diện được file SCSS. V&agrave; c&oacute; thể viết ch&egrave;n CSS v&agrave;o trong file SCSS hay kh&ocirc;ng?</p>\r\n', 'css,scss', '', 3, 0, 0),
+(3, 3, 'Cách dùng thẻ ul', '<p>L&agrave;m thế n&agrave;o để d&ugrave;ng thẻ ul m&agrave; c&oacute; thể t&ugrave;y chỉnh k&yacute; hiệu hoặc kh&ocirc;ng c&oacute; k&yacute; hiệu ph&iacute;a trước</p>\r\n', 'ul', '', 2, 0, 0),
+(4, 3, 'Hướng dẫn dùng thẻ Ol', '<h2>Thẻ &lt;ol&gt; tạo danh s&aacute;ch c&oacute; thứ tự</h2>\r\n\r\n<p>Để tạo danh s&aacute;ch c&oacute; thứ tự sử dụng thẻ&nbsp;<strong><code>&lt;ol&gt;</code></strong>&nbsp;(ordered list), v&agrave; mỗi phần tử trong danh s&aacute;ch được định nghĩa bằng t', 'ol', '', 1, 0, 0),
+(5, 3, 'Hướng dẫn dùng thẻ Ul', '<h2>Thẻ &lt;ul&gt; tạo danh s&aacute;ch kh&ocirc;ng c&oacute; thứ tự</h2>\r\n\r\n<p>C&aacute;ch tạo danh s&aacute;ch kh&ocirc;ng c&oacute; thứ tự tương tự như tạo danh s&aacute;ch c&oacute; thứ tự chỉ thay thẻ&nbsp;<strong><code>&lt;ol&gt;</code></strong>&nbs', 'ul', '', 1, 0, 0),
+(6, 3, 'Cách dùng thẻ p', '<h2>Thẻ &lt;p&gt; - tạo đoạn văn bản</h2>\r\n\r\n<p>Để tạo ra một đoạn văn bản (paragraph), đơn giản l&agrave; sử dụng &lt;p&gt; với nội dung văn bản (text) nằm giữa mở thẻ &lt;p&gt; v&agrave; đ&oacute;ng thẻ &lt;/p&gt;.</p>\r\n\r\n<blockquote>\r\n<pre>\r\n&lt;p&gt;N', 'p', '', 1, 0, 0),
+(7, 3, 'Chú thích trong HTML', '<h2>Viết ch&uacute; th&iacute;ch &lt;!-- ghi ch&uacute; --&gt; trong văn bản HTML, c&aacute;c comment kh&ocirc;ng hiện thị m&agrave; l&agrave; c&aacute;c ghi ch&uacute; gi&uacute;p đọc lại code HTML dễ d&agrave;ng hơn</h2>\r\n\r\n<p>C&aacute;c ch&uacute; th&iacute;ch trong HTML (comment) kh&ocirc;ng hiện thị tr&ecirc;n tr&igrave;nh duyệt (tr&igrave;nh duyệt bỏ qua), mục đ&iacute;ch của ch&uacute; th&iacute;ch l&agrave; để m&ocirc; tả, ghi ch&uacute;, nhắc nhở về một đoạn m&atilde; n&agrave;o đ&oacute; để sau n&agrave;y đọc lại c&oacute; thể hiểu nhanh ch&oacute;ng. Ch&uacute; th&iacute;ch th&ecirc;m v&agrave;o với c&uacute; ph&aacute;p như sau:</p>\r\n\r\n<p>&lt;p&gt;Đ&acirc;y l&agrave; đoạn văn &lt;/p&gt;</p>\r\n\r\n<p>&lt;!-- Đ&acirc;y l&agrave; ch&uacute; th&iacute;ch --&gt;</p>\r\n\r\n<p>Kết quả sẽ chỉ in ra d&ograve;ng trong thẻ &lt;p&gt;</p>\r\n\r\n<p>&nbsp;</p>\r\n', 'note', '', 0, 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `UserID` int(5) NOT NULL,
+  `roleID` int(5) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `birthday` date NOT NULL,
+  `mail` varchar(50) NOT NULL,
+  `password` varchar(32) NOT NULL,
+  `phoneNumber` int(10) NOT NULL,
+  `avatar` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`UserID`, `roleID`, `name`, `birthday`, `mail`, `password`, `phoneNumber`, `avatar`) VALUES
+(2, 1, 'Ho Trung Nhan', '2000-10-30', 'hotrungnhan2000@gmail.com', '123', 774000828, ''),
+(3, 2, 'Vo Van Khanh', '2000-01-01', 'vovankhanh2000@gmail.com', '123', 562635394, ''),
+(4, 2, 'Dinh Hieu Nghia', '2000-01-01', 'hieunghia@gmail.com', '123', 774000828, '');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `answer`
+--
+ALTER TABLE `answer`
+  ADD PRIMARY KEY (`ansID`),
+  ADD KEY `userID` (`userID`),
+  ADD KEY `queID` (`queID`);
+
+--
+-- Indexes for table `question`
+--
+ALTER TABLE `question`
+  ADD PRIMARY KEY (`queID`),
+  ADD KEY `userID` (`userID`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`UserID`),
+  ADD KEY `roleID` (`roleID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `answer`
+--
+ALTER TABLE `answer`
+  MODIFY `ansID` int(5) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `question`
+--
+ALTER TABLE `question`
+  MODIFY `queID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `UserID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `answer`
+--
+ALTER TABLE `answer`
+  ADD CONSTRAINT `answer_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `user` (`UserID`),
+  ADD CONSTRAINT `answer_ibfk_2` FOREIGN KEY (`queID`) REFERENCES `question` (`queID`);
+
+--
+-- Constraints for table `question`
+--
+ALTER TABLE `question`
+  ADD CONSTRAINT `question_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `user` (`UserID`);
+
+--
+-- Constraints for table `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`roleID`) REFERENCES `role` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
