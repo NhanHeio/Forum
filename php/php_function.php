@@ -1,13 +1,19 @@
 <?php
     
     function getDataIndex($index){
+        $per_page_record = 10;
+        if(isset($_GET['page'])){
+            $page = $_GET['page'];
+        }else{
+            $page = 1;
+        }
+        $start_from = ($page-1)*$per_page_record;
         if($index == ""){
 
             require 'connect.php';
-            $sql = "SELECT * FROM `question` ORDER BY voteUp DESC;";
+            $sql = "SELECT * FROM `question` ORDER BY voteUp DESC LIMIT $start_from, $per_page_record ;";
             $result = mysqli_query($conn, $sql);
-            for($i=1;$i<=10;$i++){
-                $r = mysqli_fetch_assoc($result);
+            while($r = mysqli_fetch_assoc($result)){
                 $author = $r["userID"];
                 $queID = $r["queID"];
                 $sql1 = "SELECT name from `user` where UserID = $author";
@@ -27,33 +33,45 @@
                                 </div>
                             </div>';
             }
-            $sum = mysqli_num_rows($result);
-            $page = $sum / 10;
-            echo '
-                <ul class="page home-product-page">
-                    <li class="page-item">
-                        <a href="" class="page-item-link">
+            $query = "SELECT COUNT(*) FROM question";
+        $rs_result = mysqli_query($conn, $query);
+        $row = mysqli_fetch_row($rs_result);
+        $sum = $row['0'];
+        $total_pages = ceil($sum / $per_page_record);
+        $page_link = "";
+        echo '<ul class="page home-product-page">';
+        echo '
+                <li class="page-item">';
+                if($page>=2){
+                    echo '
+                        <a href="index.php?page='.($page-1).'" class="page-item-link">
                             <i class="page-item-icon fas fa-angle-left"></i>
                         </a>
                     </li>';
-                    $i=0;
-                    $page_num = 1;
-                    do{
-                        echo '
-                        <li class="page-item page-item-active">
-                            <a class="page-item-link">'.$page_num.'</a>
+                }
+
+                for ($i=1; $i<=$total_pages; $i++) {   
+                    if ($i == $page) {   
+                        $page_link = "<li class='page-item page-item-active'>
+                                        <a href='index.php?page=".$i."' class='page-item-link'>".$i."</a>
+                                    </li>";
+                    }               
+                    else  {
+                        $page_link = "<li class='page-item'>
+                                        <a href='index.php?page=".$i."' class='page-item-link'>".$i."</a>
+                                    </li>";
+                    }   
+                    echo $page_link;
+                  };
+                if($page<$total_pages){
+                    echo '
+                        <li class="page-item">
+                            <a href="index.php?page='.($page+1).'" class="page-item-link">
+                                <i class="page-item-icon fas fa-angle-right"></i>
+                            </a>
                         </li>';
-                        $page_num++;
-                        $i++;
-                    }while($i<=$page);
-                echo '
-                    <li class="page-item">
-                        <a href="" class="page-item-link">
-                            <i class="page-item-icon fas fa-angle-right"></i>
-                        </a>
-                    </li>
-                </ul>
-                ';
+                }
+                echo '</ul>';
             mysqli_free_result($result);
             mysqli_free_result($result1);
             mysqli_free_result($result2);
