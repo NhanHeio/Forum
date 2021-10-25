@@ -37,44 +37,48 @@
         $rs_result = mysqli_query($conn, $query);
         $row = mysqli_fetch_row($rs_result);
         $sum = $row['0'];
-        $total_pages = ceil($sum / $per_page_record);
-        $page_link = "";
-        echo '<ul class="page home-product-page">';
-        echo '
-                <li class="page-item">';
-                if($page>=2){
-                    echo '
-                        <a href="index.php?page='.($page-1).'" class="page-item-link">
-                            <i class="page-item-icon fas fa-angle-left"></i>
-                        </a>
-                    </li>';
-                }
-
-                for ($i=1; $i<=$total_pages; $i++) {   
-                    if ($i == $page) {   
-                        $page_link = "<li class='page-item page-item-active'>
-                                        <a href='index.php?page=".$i."' class='page-item-link'>".$i."</a>
-                                    </li>";
-                    }               
-                    else  {
-                        $page_link = "<li class='page-item'>
-                                        <a href='index.php?page=".$i."' class='page-item-link'>".$i."</a>
-                                    </li>";
-                    }   
-                    echo $page_link;
-                  };
-                if($page<$total_pages){
-                    echo '
-                        <li class="page-item">
-                            <a href="index.php?page='.($page+1).'" class="page-item-link">
-                                <i class="page-item-icon fas fa-angle-right"></i>
+        if($sum == 0 ){
+            echo 'No question';
+        }else{
+            $total_pages = ceil($sum / $per_page_record);
+            $page_link = "";
+            echo '<ul class="page home-product-page">';
+            echo '
+                    <li class="page-item">';
+                    if($page>=2){
+                        echo '
+                            <a href="index.php?page='.($page-1).'" class="page-item-link">
+                                <i class="page-item-icon fas fa-angle-left"></i>
                             </a>
                         </li>';
-                }
-                echo '</ul>';
-            mysqli_free_result($result);
-            mysqli_free_result($result1);
-            mysqli_free_result($result2);
+                    }
+    
+                    for ($i=1; $i<=$total_pages; $i++) {   
+                        if ($i == $page) {   
+                            $page_link = "<li class='page-item page-item-active'>
+                                            <a href='index.php?page=".$i."' class='page-item-link'>".$i."</a>
+                                        </li>";
+                        }               
+                        else  {
+                            $page_link = "<li class='page-item'>
+                                            <a href='index.php?page=".$i."' class='page-item-link'>".$i."</a>
+                                        </li>";
+                        }   
+                        echo $page_link;
+                      };
+                    if($page<$total_pages){
+                        echo '
+                            <li class="page-item">
+                                <a href="index.php?page='.($page+1).'" class="page-item-link">
+                                    <i class="page-item-icon fas fa-angle-right"></i>
+                                </a>
+                            </li>';
+                    }
+                    echo '</ul>';
+                mysqli_free_result($result);
+                mysqli_free_result($result1);
+                mysqli_free_result($result2);
+        }
         }
     }
     function getComment($queID){

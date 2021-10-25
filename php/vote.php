@@ -8,9 +8,11 @@
                 $sql = "SELECT `voteUp` from `answer` WHERE `ansID`='$ansID'";
                 $result = mysqli_query($conn,$sql);
                 $r = mysqli_fetch_assoc($result);
+                // $userID = $r['userID'];
                 $vote = $r["voteUp"] +1;
                 echo $vote;
                 $query = mysqli_query($conn, "UPDATE `answer` SET `voteUp` = $vote WHERE `ansID`='$ansID'");
+                // $query1 = mysqli_query($conn, "INSERT INTO `vote_detail` VALUES($ansID, 'answer', $userID)");
                 mysqli_free_result($result);
                 // mysqli_free_result($query);
                 // echo "Vote Up Successfully!";
@@ -20,9 +22,11 @@
                 $sql = "SELECT `voteDown` from `answer` WHERE `ansID`='$ansID'";
                 $result = mysqli_query($conn,$sql);
                 $r = mysqli_fetch_assoc($result);
+                // $userID = $r['userID'];
                 $vote = $r["voteDown"] +1;
                 echo $vote;
                 $query = mysqli_query($conn, "UPDATE `answer` SET `voteDown` = $vote WHERE `ansID`='$ansID'");
+                // $query1 = mysqli_query($conn, "INSERT INTO `vote_detail` VALUES($ansID, 'answer', $userID)");
                 mysqli_free_result($result);
                 // mysqli_free_result($query);
                 // echo "Vote Down Successfully!";
@@ -33,9 +37,11 @@
                 $sql = "SELECT `voteUp` from `question` WHERE `queID`='$queID'";
                 $result = mysqli_query($conn,$sql);
                 $r = mysqli_fetch_assoc($result);
+                // $userID = $r['userID'];
                 $vote = $r["voteUp"] +1;
                 echo $vote;
                 $query = mysqli_query($conn, "UPDATE `question` SET `voteUp` = $vote WHERE `queID`='$queID'");
+                // $query1 = mysqli_query($conn, "INSERT INTO `vote_detail` VALUES($queID, 'question', $userID)");
                 mysqli_free_result($result);
                 // mysqli_free_result($query);
                 // echo "Vote Up Successfully!";
@@ -44,9 +50,11 @@
                 $sql = "SELECT `voteDown` from `question` WHERE `queID`='$queID'";
                 $result = mysqli_query($conn,$sql);
                 $r = mysqli_fetch_assoc($result);
+                // $userID = $r['userID'];
                 $vote = $r["voteDown"] +1;
                 echo $vote;
                 $query = mysqli_query($conn, "UPDATE `question` SET `voteDown` = $vote WHERE `queID`='$queID'");
+                // $query1 = mysqli_query($conn, "INSERT INTO `vote_detail` VALUES($queID, 'question', $userID)");
                 mysqli_free_result($result);
                 // mysqli_free_result($query);
                 // echo "Vote Down Successfully!";
