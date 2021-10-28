@@ -24,9 +24,9 @@
                 $result2 = mysqli_query($conn, $sql2);
                 $r2 = mysqli_fetch_assoc($result2);
                 echo'<div class="top-post-content">
-                                <a class="question-content" id="'. $queID .'" style="width:33.33%" href="">'. $r["topic"] .'</a>
-                                <a style="width:33.33%;text-align:center;" href="">'. $r1["name"] .'</a>
-                                <div style="width:33.33%;text-align:center;" class="post-react">
+                                <a class="question-content" id="'. $queID .'" href="">'. $r["topic"] .'</a>
+                                <a class="question-author" href="">'. $r1["name"] .'</a>
+                                <div class="post-react">
                                     <span class="vote-up-'.$queID .'">'. $r["voteUp"] .'</span> <i id="vote-up-'.$queID .'" class="vote vote-up fal fa-angle-up"></i>
                                     <span class="vote-down-'.$queID .'">'. $r["voteDown"] .'</span> <i id="vote-down-'.$queID .'" class="vote vote-down fal fa-angle-down"></i>
                                     <span>'. $r2["COUNT(*)"] .' <i class="fal fa-comment"></i></span>
@@ -88,9 +88,9 @@
                 $result2 = mysqli_query($conn, $sql2);
                 $r2 = mysqli_fetch_assoc($result2);
                 echo'<div class="top-post-content">
-                                <a class="question-content" id="'. $queID .'" style="width:33.33%" href="">'. $r["topic"] .'</a>
-                                <a style="width:33.33%;text-align:center;" href="">'. $r1["name"] .'</a>
-                                <div style="width:33.33%;text-align:center;" class="post-react">
+                                <a class="question-content" id="'. $queID .'" href="">'. $r["topic"] .'</a>
+                                <a class="question-author" href="">'. $r1["name"] .'</a>
+                                <div class="post-react">
                                     <span class="vote-up-'.$queID .'">'. $r["voteUp"] .'</span> <i id="vote-up-'.$queID .'" class="vote vote-up fal fa-angle-up"></i>
                                     <span class="vote-down-'.$queID .'">'. $r["voteDown"] .'</span> <i id="vote-down-'.$queID .'" class="vote vote-down fal fa-angle-down"></i>
                                     <span>'. $r2["COUNT(*)"] .' <i class="fal fa-comment"></i></span>
@@ -113,9 +113,9 @@
                 $result2 = mysqli_query($conn, $sql2);
                 $r2 = mysqli_fetch_assoc($result2);
                 echo'<div class="top-post-content">
-                                <a class="question-content" id="'. $queID .'" style="width:33.33%" href="">'. $r["topic"] .'</a>
-                                <a style="width:33.33%;text-align:center;" href="">'. $r1["name"] .'</a>
-                                <div style="width:33.33%;text-align:center;" class="post-react">
+                                <a class="question-content" id="'. $queID .'" href="">'. $r["topic"] .'</a>
+                                <a class="question-author" href="">'. $r1["name"] .'</a>
+                                <div class="post-react">
                                     <span class="vote-up-'.$queID .'">'. $r["voteUp"] .'</span> <i id="vote-up-'.$queID .'" class="vote vote-up fal fa-angle-up"></i>
                                     <span class="vote-down-'.$queID .'">'. $r["voteDown"] .'</span> <i id="vote-down-'.$queID .'" class="vote vote-down fal fa-angle-down"></i>
                                     <span>'. $r2["COUNT(*)"] .' <i class="fal fa-comment"></i></span>

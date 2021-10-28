@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./assets/css/owl.theme.green.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/texteditor.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css">
     <title>Forum IT</title>
 </head>
@@ -25,10 +26,10 @@
         <div class="grid" id="header">
             <div id="nav">
                 <ul style="list-style-type: none">
-                    <li><span style="color:white">FORUM IT </span></li>
+                    <li id="name-forum"><span style="color:white">FORUM IT </span></li>
                     <li><i style="color:white; padding: 0 12px;" class="far fa-grip-lines-vertical"></i></li>
                     <li><a href="index.php">Trang chủ</a></li>
-                    <li><a href="">Bài viết mới</a></li>
+                    <li><a style="cursor:pointer;" onclick="post();">Bài viết mới</a></li>
                     <li><a href="">Thành viên</a></li>
                 </ul>
             </div>
@@ -37,10 +38,10 @@
                     <?php
                         if(isset($_SESSION["name"])&& $_SESSION['name']){
   
-                            echo '<li>
-                                <img class="nav-avt" src="./assets/img/'.$_SESSION['avt'].'.jpg" alt="avt">
-                            </li>
-                            <li class="nav-user-item">'.$_SESSION['name'].'
+                            echo'
+                            <li class="nav-user-item">
+                            <img class="nav-avt" src="./assets/img/'.$_SESSION['avt'].'.jpg" alt="avt">
+                            <span class="nav-user-name">'.$_SESSION['name'].'</span>
                                 <ul class="name-user-hover" style="list-style-type: none;padding: 0;">
                                     <li class="name-user-item" ><a class="name-user-item-link" href="personal.html">Trang cá nhân</a></li>
                                     <li class="name-user-item" ><a class="name-user-item-link" href="./php/logout.php">Đăng xuất</a></li>
@@ -73,10 +74,9 @@
         <div class="grid">
             <div class="row" id="content">
                 <div class="owl-carousel owl-theme advertisement">
-                    <div class="item"><h1>Quảng cáo 1</h1></div>
-                    <div class="item"><h1>Quảng cáo 2</h1></div>
+                    <img class="item" src="./assets/img/nhan_ads0000.jpg" alt="">
+                    <img class="item" src="./assets/img/nghia_ads0000.jpg" alt="">
                     <div class="item"><h1>Quảng cáo 3</h1></div>
-                    <div class="item"><h1>Quảng cáo 4</h1></div>
                 </div>
 
                 <div class="col-2 content-category">
@@ -172,7 +172,7 @@
 
         <div id="footer">
             <div class="row">
-                <div class="col-4">
+                <div class="col-4 footer-authors">
                     <h3 class="footer-heading">Author</h3>
                     <ul style="list-style-type: none;padding-left:0;">
                         <li class="footer-author">Hồ Trung Nhân</li>
@@ -180,7 +180,7 @@
                         <li class="footer-author">Đinh Hiếu Nghĩa</li>
                     </ul>
                 </div>
-                <div class="col-4">
+                <div class="col-4 footer-links">
                     <h3 class="footer-heading">Contact</h3>
                     <ul style="list-style-type: none;padding-left:0;">
                         <li><a class="footer-link" href="https://www.facebook.com/nhantrung.ho/">
@@ -197,7 +197,7 @@
                         </a></li>
                     </ul>
                 </div>
-                <div class="col-4">
+                <div class="col-4 footer-privacy">
                     <a href="#" class="footer-link">Privacy Policy</a>
                 </div>
             </div>

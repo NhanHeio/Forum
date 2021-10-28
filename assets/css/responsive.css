@@ -1,0 +1,114 @@
+
+/*Responsive*/
+/*Mobile*/
+@media (max-width:740px) {
+    .advertisement{
+        display: none!important;
+    }
+
+    .content-category{
+        display: none;
+    }
+
+    #main-content{
+        width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .breadcrumbs{
+        display: none;
+    }
+
+    .admin-noti{
+        display: none;
+    }
+
+    .top-post-content{
+        flex-wrap: wrap;
+    }
+
+    .question-content{
+        width: 100%;
+    }
+    
+    .post-react{
+        display: inline-block;
+        margin-right: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .question-author{
+        display: none!important;
+    }
+
+    #nav ul li a{
+        display: none;
+    }
+    #nav ul li i{
+        display: none;
+    }
+
+    .nav-user-name{
+        display: none;
+    }
+
+    .footer-authors{
+        width: 50%;
+    }
+
+    .footer-author{
+        padding: 0 10%;
+    }
+
+    .footer-links{
+        display: none;
+    }
+
+    .footer-link{
+        padding: 0 10%;
+        
+    }
+
+    .footer-privacy{
+        width: 50%;
+        padding: 0 10%;
+    }
+
+    .vote-area{
+        display: none;
+    }
+
+    #question-space{
+        margin-left: 10px;
+        margin-right: 0;
+    }
+    .h2{
+        margin-left: 10px;
+    }
+    .allcomment{
+        margin: 10px 10px;
+        width: 100%;
+    }
+
+    .comment_detail{
+        max-width:100%;
+        min-width: 300px !important;
+    }
+}
+/*tablet*/
+@media (min-width: 740px) and (max-width: 1024px){
+    .advertisement{
+        width: 1000px;
+        align-items: center;
+    }
+
+    .breadcrumbs{
+        display: none;
+    }
+
+    .content-category{
+        display: none;
+    }
+}

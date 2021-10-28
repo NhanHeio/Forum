@@ -25,7 +25,10 @@ $(document).ready(function(){
             $(this).removeClass("active");
         }
     });
-    //function load question
+    //function load main page mobile
+    $(document).on('click', '#name-forum',function(){
+        location.replace("index.php");
+    });
     
 });
 

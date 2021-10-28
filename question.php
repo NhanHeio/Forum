@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./assets/css/owl.theme.green.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/texteditor.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css">
     <title>Forum IT</title>
 </head>
@@ -21,25 +22,25 @@
     
     <div id="main">
         
-        <div class="grid" id="header">
+    <div class="grid" id="header">
             <div id="nav">
                 <ul style="list-style-type: none">
-                    <li><span style="color:white">FORUM IT </span></li>
+                    <li id="name-forum"><span style="color:white">FORUM IT </span></li>
                     <li><i style="color:white; padding: 0 12px;" class="far fa-grip-lines-vertical"></i></li>
                     <li><a href="index.php">Trang chủ</a></li>
-                    <li><a href="">Bài viết mới</a></li>
+                    <li><a style="cursor:pointer;" onclick="post();">Bài viết mới</a></li>
                     <li><a href="">Thành viên</a></li>
                 </ul>
             </div>
             <div id="nav_right">
                 <ul style="list-style-type: none">
                     <?php
-                        if(isset($_SESSION["name"])){
+                        if(isset($_SESSION["name"])&& $_SESSION['name']){
   
-                            echo '<li>
-                                <img class="nav-avt" src="./assets/img/'.$_SESSION['avt'].'.jpg" alt="avt">
-                            </li>
-                            <li class="nav-user-item">'.$_SESSION['name'].'
+                            echo'
+                            <li class="nav-user-item">
+                            <img class="nav-avt" src="./assets/img/'.$_SESSION['avt'].'.jpg" alt="avt">
+                            <span class="nav-user-name">'.$_SESSION['name'].'</span>
                                 <ul class="name-user-hover" style="list-style-type: none;padding: 0;">
                                     <li class="name-user-item" ><a class="name-user-item-link" href="personal.html">Trang cá nhân</a></li>
                                     <li class="name-user-item" ><a class="name-user-item-link" href="./php/logout.php">Đăng xuất</a></li>
@@ -51,7 +52,21 @@
                    
 
                     ?>
-                    <li><i class="icon_seach fal fa-search"></i></li>
+                    <li class="search-button"><i class="icon_seach fal fa-search"></i>
+                
+                    <div class="search_space">
+                        <form action="php/search.php" method="get">
+                            <h5 style="margin:4px">Search</h5>
+                            <hr>
+                            <input style="display:block" class="search-input" type="text" placeholder="Search..." name="search_topic">
+                            <label style="margin-left:10px" for="search_member">By:</label>
+                            <input style="display:block" class="search-input" type="text" placeholder="Member" name="search_member">
+                            <button id="search" style="float:right; margin-bottom:20px; margin-right:30px" name="submit" class="btn btn-primary">
+                                Search
+                            </button>
+                        </form>
+                    </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -124,9 +139,9 @@
         </div>
     </div>
 
-    <div class="grid" id="footer">
+    <div id="footer">
             <div class="row">
-                <div class="col-4">
+                <div class="col-4 footer-authors">
                     <h3 class="footer-heading">Author</h3>
                     <ul style="list-style-type: none;padding-left:0;">
                         <li class="footer-author">Hồ Trung Nhân</li>
@@ -134,7 +149,7 @@
                         <li class="footer-author">Đinh Hiếu Nghĩa</li>
                     </ul>
                 </div>
-                <div class="col-4">
+                <div class="col-4 footer-links">
                     <h3 class="footer-heading">Contact</h3>
                     <ul style="list-style-type: none;padding-left:0;">
                         <li><a class="footer-link" href="https://www.facebook.com/nhantrung.ho/">
@@ -151,13 +166,12 @@
                         </a></li>
                     </ul>
                 </div>
-                <div class="col-4">
+                <div class="col-4 footer-privacy">
                     <a href="#" class="footer-link">Privacy Policy</a>
                 </div>
             </div>
 
         </div>
-    </div>
     <!--External Js File-->
     <script src="./assets/js/jquery.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/poper.js/1.14.7/umd/poper.min.js"></script> -->
