@@ -106,18 +106,23 @@ html{
     text-decoration: none;
     line-height:47px;
     padding: 0 12px;
-    display: inline-block;
+    display: block;
+}
+
+#nav_right ul li a:hover{
+    background-color: #333;
 }
 
 .nav-avt{
-    width: 25px;
+    width: 45px;
     height: 25px;
     border-radius:50%;
+    padding: 0 10px;
 }
 
 .nav-user-item{
     color: var(--white-color);
-    
+    display:block;
     line-height:47px;
     padding: 0 12px;
     
@@ -217,7 +222,7 @@ html{
 }
 
 .advertisement{
-    background-color: #0e549c;
+    /* background-color: #0e549c; */
     height:100px;
     /* margin: 10px 3rem; */
     width: 1300px;
@@ -226,7 +231,10 @@ html{
     margin-bottom: 20px;
     padding-left: 12px;
     padding-right: 12px;
+}
 
+.advertisement .item{
+    height: 100px;
 }
 
 .breadcrumbs li a{
@@ -331,9 +339,20 @@ html{
     
 }
 
+.question-content{
+    width: 33.33%;
+}
+
+.question-author{
+    width: 33.33%;
+    text-align: center;
+}
+
 .post-react{
     display: inline-block;
     margin-right: 0.5rem;
+    width: 33.33%;
+    text-align: center;
 }
 
 .post-react span{
