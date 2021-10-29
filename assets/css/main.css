@@ -142,16 +142,21 @@ html{
     display: none;
 }
 
-.search_space{
+#search-place{
     position: absolute;
     width: 350px;
     right: 20px;
     top: 55px;
     background-color: #ECECEC;
-    display: none;
 }
 
-.search_space::before{
+#search-result{
+    display:block;
+    width: 100%;
+    margin-top:40px;
+}
+
+/* .search_space::before{
     content:"";
     position: absolute;
     right: 12px;
@@ -159,7 +164,7 @@ html{
     width: 50px;
     height: 20px;
     
-}
+} */
 
 .search-input{
     width: 300px;
@@ -211,9 +216,9 @@ html{
     background-color: var(--hover-color);
 }
 
-.search-button:hover .search_space{
+/* .search-button:focus .search_space{
     display: block;
-}
+} */
 
 #content{
     margin-top:55px;
@@ -341,10 +346,12 @@ html{
 
 .question-content{
     width: 33.33%;
+    cursor: pointer;
 }
 
 .question-author{
     width: 33.33%;
+    cursor: pointer;
     text-align: center;
 }
 

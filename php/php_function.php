@@ -23,8 +23,8 @@
                 $result2 = mysqli_query($conn, $sql2);
                 $r2 = mysqli_fetch_assoc($result2);
                 echo'<div class="top-post-content">
-                                <a class="question-content" id="'. $queID .'" href="">'. $r["topic"] .'</a>
-                                <a class="question-author" href="">'. $r1["name"] .'</a>
+                                <a class="question-content" id="'. $queID .'" href="question.php?idQuestion='.$queID.'" >'. $r["topic"] .'</a>
+                                <a class="question-author" >'. $r1["name"] .'</a>
                                 <div class="post-react">
                                     <span class="vote-up-'.$queID .'">'. $r["voteUp"] .' </span><i id="vote-up-'.$queID .'" class="vote vote-up fal fa-angle-up"></i>
                                     <span class="vote-down-'.$queID .'">'. $r["voteDown"] .' </span><i id="vote-down-'.$queID .'" class="vote vote-down fal fa-angle-down"></i>
@@ -84,6 +84,35 @@
 
         // }
     }
+
+    function load_question($id){
+        require 'connect.php';
+        // session_start();
+        // if(isset($_GET["idQuestion"])){
+            $idQuestion = $id;
+            $sql = "SELECT * FROM `question` WHERE `queID` = '$idQuestion'";
+            $result = mysqli_query($conn,$sql);
+            $r= mysqli_fetch_assoc($result);
+            // $_SESSION["voteUp"] = $r['voteUp'];
+            // $_SESSION["topic"] = $r['topic'];
+            // $_SESSION["content"] = $r['Content'];
+            // $_SESSION["idQuestion"] = $r['queID'];
+            echo '<div id="question-space" class="quesitondetail">
+                        <div class="vote-area">
+                            <i id="vote-up-'.$idQuestion .'" style="font-size:50px" class="vote fal fa-angle-up"></i> <br>
+                            <span class="vote-up-'.$idQuestion .'" style="font-size:20px">'.$r["voteUp"].'</span><br>
+                            <i id="vote-down-'.$idQuestion .'" style="font-size:50px" class="vote fal fa-angle-down"></i>
+                        </div>
+                        <div class="question"><span>'. $r["topic"] .'</span> </div>
+                        <br>
+                        <div style="width:max-width; height: fit-content;background-color: #E8E8E8;">
+                            '. $r["Content"] .'
+                        </div>
+                    </div>';
+            mysqli_free_result($result);
+        // }
+    }
+
     function getComment($queID){
         require 'connect.php';
         $sql = "SELECT * FROM `answer` WHERE `queID` = '$queID'";
