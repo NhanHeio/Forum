@@ -54,8 +54,10 @@
                     ?>
                     <li class="search-button"><i class="icon_seach fal fa-search"></i>
                 
-                    <div class="search_space">
-                        <form action="php/search.php" method="get">
+                    </li>
+                </ul>
+                    <div id="search-place" class="class-none">
+                        <form action="" method="post" onsubmit="return false">
                             <h5 style="margin:4px">Search</h5>
                             <hr>
                             <input style="display:block" class="search-input" type="text" placeholder="Search..." name="search_topic">
@@ -64,10 +66,12 @@
                             <button id="search" style="float:right; margin-bottom:20px; margin-right:30px" name="submit" class="btn btn-primary">
                                 Search
                             </button>
+                            <button id="cancel-search" class="btn btn-cancel" style="float:right; margin-bottom:20px; margin-right:30px" >Cancel</button>
                         </form>
+                        <div id="search-result">
+
+                        </div>
                     </div>
-                    </li>
-                </ul>
             </div>
         </div>
         <div class="grid">
@@ -100,19 +104,23 @@
                 <div id="main-content" class="col-8 content-main">
                     <!--Load question content-->
                 <?php
-
-                    echo '<div id="question-space" class="quesitondetail">
-                        <div class="vote-area">
-                            <i id="vote-up-'.$_SESSION["idQuestion"] .'" style="font-size:50px" class="vote fal fa-angle-up"></i> <br>
-                            <span class="vote-up-'.$_SESSION["idQuestion"] .'" style="font-size:20px">'.$_SESSION["voteUp"].'</span><br>
-                            <i id="vote-down-'.$_SESSION["idQuestion"] .'" style="font-size:50px" class="vote fal fa-angle-down"></i>
-                        </div>
-                        <div class="question"><span>'. $_SESSION["topic"] .'</span> </div>
-                        <br>
-                        <div style="width:max-width; height: fit-content;background-color: #E8E8E8;">
-                            '. $_SESSION["content"] .'
-                        </div>
-                    </div>';
+                    // load_question($_GET("idQuestion"));
+                    if(isset($_GET["idQuestion"])){
+                        $id = $_GET["idQuestion"];
+                    }
+                    load_question($id);
+                    // echo '<div id="question-space" class="quesitondetail">
+                    //     <div class="vote-area">
+                    //         <i id="vote-up-'.$_SESSION["idQuestion"] .'" style="font-size:50px" class="vote fal fa-angle-up"></i> <br>
+                    //         <span class="vote-up-'.$_SESSION["idQuestion"] .'" style="font-size:20px">'.$_SESSION["voteUp"].'</span><br>
+                    //         <i id="vote-down-'.$_SESSION["idQuestion"] .'" style="font-size:50px" class="vote fal fa-angle-down"></i>
+                    //     </div>
+                    //     <div class="question"><span>'. $_SESSION["topic"] .'</span> </div>
+                    //     <br>
+                    //     <div style="width:max-width; height: fit-content;background-color: #E8E8E8;">
+                    //         '. $_SESSION["content"] .'
+                    //     </div>
+                    // </div>';
                   
 
                 ?>
@@ -121,7 +129,7 @@
                         <div class="comment_detail">
                             <?php
                                 
-                                getComment($_SESSION["idQuestion"]);
+                                getComment($_GET["idQuestion"]);
                             ?>
                             <div>
                                 <form action="./php/postcomment.php" method="POST" style="width:max-width">

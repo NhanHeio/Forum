@@ -42,4 +42,5 @@ textarea {
     color: black;
     border: none;
     width: 50px;
+    min-width:fit-content;
 }

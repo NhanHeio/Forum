@@ -29,7 +29,13 @@ $(document).ready(function(){
     $(document).on('click', '#name-forum',function(){
         location.replace("index.php");
     });
-    
+    //function search
+    $(document).on('click', '.search-button',function(){
+        $('#search-place').removeClass("class-none");
+    });
+    $(document).on('click', '#cancel-search',function(){
+        $('#search-place').addClass("class-none");
+    });
 });
 
 function post(){
@@ -71,26 +77,26 @@ $(document).ready(function() {
 
 
 //Load content question
-$(document).ready(function() {
-    $(".question-content").click(function(event) {
+// $(document).ready(function() {
+//     $(".question-content").click(function(event) {
         
-        var idQuestion=$(this).attr("id");
-        event.preventDefault();
-        $.ajax({
-            url:"php/loadpagequestion.php",
-            method:"POST",
-            data: {idQuestion:idQuestion},
-            success:function(data) 
-            {   
-                window.location.href="question.php";
-            },
-            error:function(data)
-            {
-                alert("Lỗi load item");
-            }
-        });
-    });
-});
+//         var idQuestion=$(this).attr("id");
+//         event.preventDefault();
+//         $.ajax({
+//             url:"php/loadpagequestion.php",
+//             method:"POST",
+//             data: {idQuestion:idQuestion},
+//             success:function(data) 
+//             {   
+//                 window.location.href="question.php";
+//             },
+//             error:function(data)
+//             {
+//                 alert("Lỗi load item");
+//             }
+//         });
+//     });
+// });
 //Load category link
 $(document).ready(function() {
     $(".category-item-link").click(function(event) {
@@ -114,27 +120,30 @@ $(document).ready(function() {
     });
 });
 //Search
-// $(document).ready(function() {
-//     $("#search").click(function(event) {
-        
-//         var nameCategory=event.target.id;
-//         $.ajax({
-//             url:"php/loadindex.php",
-//             method:"POST",
-//             data: {nameCategory:nameCategory},
-//             dataType:'html',
-//             success:function(data) 
-//             {   
-//                 $("#index_load").html(data); 
-//                // alert("OK");
-//             },
-//             error:function(data)
-//             {
-//                 alert("Lỗi load item");
-//             }
-//         });
-//     });
-// });
+$(document).ready(function() {
+    $("#search").click(function(event) {      
+    var topic = $("input[name=search_topic]").val();
+    var author = $("input[name=search_member]").val();
+        $.ajax({
+            url:"php/search.php",
+            method:"POST",
+            data: {
+                topic:topic,
+                author:author
+            },
+            dataType:'html',
+            success:function(data) 
+            {   
+                $("#search-result").html(data); 
+                alert("OK");
+            },
+            error:function(data)
+            {
+                alert("Lỗi load item");
+            }
+        });
+    });
+});
 
 
 //Vote

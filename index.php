@@ -54,9 +54,10 @@
 
                     ?>
                     <li class="search-button"><i class="icon_seach fal fa-search"></i>
-                
-                    <div class="search_space">
-                        <form action="php/search.php" method="get">
+                    </li>
+                </ul>
+                    <div id="search-place" class="class-none">
+                        <form action="" method="post" onsubmit="return false">
                             <h5 style="margin:4px">Search</h5>
                             <hr>
                             <input style="display:block" class="search-input" type="text" placeholder="Search..." name="search_topic">
@@ -65,10 +66,13 @@
                             <button id="search" style="float:right; margin-bottom:20px; margin-right:30px" name="submit" class="btn btn-primary">
                                 Search
                             </button>
+                            <button id="cancel-search" class="btn btn-cancel" style="float:right; margin-bottom:20px; margin-right:30px" >Cancel</button>
                         </form>
+                        <div id="search-result">
+
+                        </div>
                     </div>
-                    </li>
-                </ul>
+                    
             </div>
         </div>
         <div class="grid">

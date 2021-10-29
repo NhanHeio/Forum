@@ -24,8 +24,8 @@
                 $result2 = mysqli_query($conn, $sql2);
                 $r2 = mysqli_fetch_assoc($result2);
                 echo'<div class="top-post-content">
-                                <a class="question-content" id="'. $queID .'" href="">'. $r["topic"] .'</a>
-                                <a class="question-author" href="">'. $r1["name"] .'</a>
+                                <a class="question-content" id="'. $queID .'" href="question.php?idQuestion='.$queID.'" >'. $r["topic"] .'</a>
+                                <a class="question-author" >'. $r1["name"] .'</a>
                                 <div class="post-react">
                                     <span class="vote-up-'.$queID .'">'. $r["voteUp"] .'</span> <i id="vote-up-'.$queID .'" class="vote vote-up fal fa-angle-up"></i>
                                     <span class="vote-down-'.$queID .'">'. $r["voteDown"] .'</span> <i id="vote-down-'.$queID .'" class="vote vote-down fal fa-angle-down"></i>
@@ -88,8 +88,8 @@
                 $result2 = mysqli_query($conn, $sql2);
                 $r2 = mysqli_fetch_assoc($result2);
                 echo'<div class="top-post-content">
-                                <a class="question-content" id="'. $queID .'" href="">'. $r["topic"] .'</a>
-                                <a class="question-author" href="">'. $r1["name"] .'</a>
+                                <a class="question-content" id="'. $queID .'" href="question.php?idQuestion='.$queID.'" >'. $r["topic"] .'</a>
+                                <a class="question-author" >'. $r1["name"] .'</a>
                                 <div class="post-react">
                                     <span class="vote-up-'.$queID .'">'. $r["voteUp"] .'</span> <i id="vote-up-'.$queID .'" class="vote vote-up fal fa-angle-up"></i>
                                     <span class="vote-down-'.$queID .'">'. $r["voteDown"] .'</span> <i id="vote-down-'.$queID .'" class="vote vote-down fal fa-angle-down"></i>
@@ -113,8 +113,8 @@
                 $result2 = mysqli_query($conn, $sql2);
                 $r2 = mysqli_fetch_assoc($result2);
                 echo'<div class="top-post-content">
-                                <a class="question-content" id="'. $queID .'" href="">'. $r["topic"] .'</a>
-                                <a class="question-author" href="">'. $r1["name"] .'</a>
+                                <a class="question-content" id="'. $queID .'" href="question.php?idQuestion='.$queID.'" >'. $r["topic"] .'</a>
+                                <a class="question-author" >'. $r1["name"] .'</a>
                                 <div class="post-react">
                                     <span class="vote-up-'.$queID .'">'. $r["voteUp"] .'</span> <i id="vote-up-'.$queID .'" class="vote vote-up fal fa-angle-up"></i>
                                     <span class="vote-down-'.$queID .'">'. $r["voteDown"] .'</span> <i id="vote-down-'.$queID .'" class="vote vote-down fal fa-angle-down"></i>
@@ -138,14 +138,14 @@
 
                     $r1 = mysqli_fetch_assoc($result1);
                     echo'<div class="top-post-content">
-                                    <a class="question-content" style="width:50%" href="">'. $r["name"] .'</a>
+                                    <a class="question-content" style="width:50%" >'. $r["name"] .'</a>
                                     <div style="width:50%" class="post-react">
                                         <span>'. $r1["COUNT(*)"] .' Post</i></span>
                                     </div>
                                 </div>';
                 }else{
                     echo'<div class="top-post-content">
-                                    <a class="question-content" style="width:50%" href="">'. $r["name"] .'</a>
+                                    <a class="question-content" style="width:50%" >'. $r["name"] .'</a>
                                     <div style="width:50%" class="post-react">
                                         <span>0 Post</i></span>
                                     </div>
