@@ -131,7 +131,7 @@
                         <div class="person">
                             <div class="con1">
                                 <div>
-                                    <img src="gallery-1.jpg" alt="Picture" width="30px" height="30px">
+                                    <img src="./assets/img/'.$r["avatar"].'.jpg" alt="Picture" width="30px" height="30px">
                                     <span>'. $r["name"] .'</span>
                                 </div>
                                 <div class="datal">
