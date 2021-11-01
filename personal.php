@@ -9,7 +9,14 @@
     $avatar1= $user['avatar'];
     $birthday=$user['birthday'];
     $phoneNumber=$user['phoneNumber'];
-
+    if(isset($_POST['capnhat']))  {
+        $birthday1=$_POST['birthday'];
+        $phone=$_POST['phone'];
+        $sql4="UPDATE user SET birthday='$birthday1', phoneNumber='$phone' WHERE name ='".$_SESSION["name"]."'";
+        mysqli_query($conn,$sql4);
+        header("Location: personal.php");
+        
+  }
 ?>
 <?php 
     $name1=$_SESSION['name'];
@@ -131,26 +138,30 @@
                                 <h2 class="user__name">
                                   <?php echo $_SESSION['name'] ?>
                                 </h2>
+                                <form method='POST'>
                                 <div class="user__infor-item user__time">
                                 
                                     <div>
                                     <ion-icon name="calendar-sharp" style ="height: 20px; width:50px;"></ion-icon>
-                                         <span name="brithday"><?php echo $birthday ?></span>
+                                         
+                                         <input name="birthday" style="border: 0px; background-color: #e5e6e7" value ="<?php echo $birthday ?>">
                                     </div>
                                     <div>
                                     <ion-icon name="call-sharp" style ="height: 20px; width:50px;"></ion-icon>   
-                                        <span name="phone"><?php echo $phoneNumber ?></span>
+                                    
+                                    <input name="phone" style="border: 0px;background-color: #e5e6e7" value ="<?php echo $phoneNumber ?>">
                                     </div>
-                                </form>
+                                    <button style="width: 80px; height: 25px;" class='capnhat' id='capnhat' name='capnhat'>Cập nhật</button>
                                 </div>
+                                </form>
                                 <div class="user__infor-item user__location">
                                     <form action='upload.php' method='post' enctype='multipart/form-data' style="font-size:20px;">
                                         <div class='updateinfo' id='updateinfo'>
                                               Cập nhật ảnh:
                                             <input type='file' name='fileToUpload' id='fileToUpload'>
-                                            <input type='submit' value='Cập nhật' name='submit'>
+                                            <input style="width: 130px;" type='submit' value='Cập nhật ảnh' name='submit'>
                                         </div>
-                                    
+                                    </form> 
                                 </div>
                             </div>
                         </div> 
