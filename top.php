@@ -31,13 +31,17 @@
                 <ul style="list-style-type: none">
                     <?php
                         if(isset($_SESSION["name"])&& $_SESSION['name']){
-  
+                            $users3 = mysqli_query($conn,"SELECT * FROM user WHERE name = '".$_SESSION["name"]."' ");
+                            $user3 = mysqli_fetch_assoc($users3);
+                             $avatar3= $user3['avatar'];
+                             $duoi='.jpg';
+                             $allname=$avatar3.$duoi;
                             echo'
                             <li class="nav-user-item">
-                            <img class="nav-avt" src="./assets/img/'.$_SESSION['avt'].'.jpg" alt="avt">
+                            <img class="nav-avt" src="uploads/'.$allname.'" alt="avt">
                             <span class="nav-user-name">'.$_SESSION['name'].'</span>
                                 <ul class="name-user-hover" style="list-style-type: none;padding: 0;">
-                                    <li class="name-user-item" ><a class="name-user-item-link" href="personal.html">Trang cá nhân</a></li>
+                                    <li class="name-user-item" ><a class="name-user-item-link" href="personal.php">Trang cá nhân</a></li>
                                     <li class="name-user-item" ><a class="name-user-item-link" href="./php/logout.php">Đăng xuất</a></li>
                                 </ul>
                             </li>';
