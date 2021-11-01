@@ -12,7 +12,7 @@
     if(isset($_POST["nameCategory"])){
         $_SESSION["nameCategory"] = $_POST["nameCategory"];
         if($_SESSION["nameCategory"] == 'category-all-post'){
-            $sql = "SELECT * FROM `question` ORDER BY voteUp DESC LIMIT $start_from, $per_page_record";
+            $sql = "SELECT * FROM `question` WHERE flag <= 15 ORDER BY voteUp DESC LIMIT $start_from, $per_page_record";
             $result0 = mysqli_query($conn, $sql);
             while($r = mysqli_fetch_assoc($result0)){
                 $author = $r["userID"];
@@ -75,7 +75,7 @@
                 }
                 echo '</ul>';
         }elseif($_SESSION["nameCategory"] == 'category-new-post'){
-            $sql = "SELECT * FROM `question` ORDER BY `queID` DESC LIMIT $start_from, $per_page_record ;";
+            $sql = "SELECT * FROM `question` WHERE flag <= 15 ORDER BY `queID` DESC LIMIT $start_from, $per_page_record ;";
             $result0 = mysqli_query($conn, $sql);
             for($i=1;$i<=10;$i++){
                 $r = mysqli_fetch_assoc($result0);
@@ -100,7 +100,7 @@
             }
             
         }elseif($_SESSION["nameCategory"] == 'category-hot-post'){
-            $sql = "SELECT * FROM `question` ORDER BY voteUp DESC LIMIT $start_from, $per_page_record ;";
+            $sql = "SELECT * FROM `question` WHERE flag <= 15 ORDER BY voteUp DESC LIMIT $start_from, $per_page_record ;";
             $result0 = mysqli_query($conn, $sql);
             for($i=1;$i<=10;$i++){
                 $r = mysqli_fetch_assoc($result0);

@@ -11,7 +11,7 @@
         if($index == ""){
 
             require 'connect.php';
-            $sql = "SELECT * FROM `question` ORDER BY voteUp DESC LIMIT $start_from, $per_page_record ;";
+            $sql = "SELECT * FROM `question` WHERE flag <= 15 ORDER BY voteUp DESC LIMIT $start_from, $per_page_record ;";
             $result = mysqli_query($conn, $sql);
             while($r = mysqli_fetch_assoc($result)){
                 $author = $r["userID"];
@@ -105,7 +105,7 @@
                         </div>
                         <div class="question"><span>'. $r["topic"] .'</span> </div>
                         <br>
-                        <div style="width:max-width; height: fit-content;background-color: #E8E8E8;">
+                        <div style="width:max-width; height: fit-content;background-color: #E8E8E8; padding: 20px;">
                             '. $r["Content"] .'
                         </div>
                     </div>';

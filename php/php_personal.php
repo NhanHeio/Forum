@@ -1,30 +1,35 @@
 <?php
     
-    function getDataIndex1($name1){
+    function getDataIndex1($id){
     
             
             require 'connect.php';
-            $sql1= "SELECT * FROM user WHERE name = '$name1'";
+            $sql1= "SELECT * FROM user WHERE UserID = '$id'";
             $result1 = mysqli_query($conn, $sql1);
             $r1 = mysqli_fetch_assoc($result1);
-            $id = $r1['UserID'];
+            
             $sql = "SELECT * FROM question where userID = '$id'";
             $result = mysqli_query($conn, $sql);
-               while( $r = mysqli_fetch_assoc($result)){
-                $author = $r["userID"];
-                $queID = $r["queID"];
-                $voteUp = $r["voteUp"];
-                $voteDown = $r["voteDown"];
-                $flag = $r["flag"];
-                echo'<div class="top-post-content" style="width: 1000px; ">
-                                <a class="question-content;"  id="'. $queID .'" style="width:33.33%; font-size: 15px; color: #0d6efd;" href="">'. $r["topic"] .'</a>
-                                <a style="width:33.33%;text-align:center;" href=""></a>
-                                <div style="width:50%;text-align:center; margin-top: 20px;  font-size: 15px;" class="post-react" >
-                                    <span class="vote-up-'.$queID .'">'. $r["voteUp"] .' </span><i id="vote-up-'.$queID .'" class="vote vote-up fal fa-angle-up"></i>
-                                    <span class="vote-down-'.$queID .'">'. $r["voteDown"] .' </span><i id="vote-down-'.$queID .'" class="vote vote-down fal fa-angle-down"></i>
-                                    <span>'. $r["flag"] .' <i class="fal fa-comment"></i></span>
-                                </div>
-                     </div>';
+            if(mysqli_num_rows($result)>0){
+                while( $r = mysqli_fetch_assoc($result)){
+                 $author = $id;
+                 $queID = $r["queID"];
+                 $voteUp = $r["voteUp"];
+                 $voteDown = $r["voteDown"];
+                 $flag = $r["flag"];
+                 echo'<div class="top-post-content" style="width: 1000px; ">';
+                 if($flag <=15){
+                     echo'<a class="question-content;"  id="'. $queID .'" style="width:33.33%; font-size: 15px; color: #0d6efd;" href="question.php?idQuestion='.$queID.'">'. $r["topic"] .'</a>
+                     <button id="btn'. $queID .'" class="btn btn-delete" style="background-color: red; height:80%;">Xóa</button>';     
+                 }else{
+                     echo'<a class="question-content;"  id="'. $queID .'" style="width:33.33%; font-size: 15px; color: #0d6efd;" href="question.php?idQuestion='.$queID.'">'. $r["topic"] .'</a>
+                     <a  class="question-content;" style=" font-size: 15px; color: red;"><b>Bài viết sẽ không hiển thị với người khác do bị báo cáo quá nhiều.</b></a>
+                     <button id="btn'. $queID .'" class="btn btn-delete" style="background-color: red; height:80%;">Xóa</button>'; 
+                 }  
+                 echo'</div>';
+            }
+            }else{
+                echo'<p>Chưa có bài viết</p>';
             }
            
             mysqli_free_result($result);

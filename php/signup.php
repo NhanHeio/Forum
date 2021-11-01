@@ -16,11 +16,12 @@
    	 	} 
    	 	else{
             echo "<div class='note'><p style ='color: red;'> Đắng ký thành công </p></div>";
-   	 		$sql="INSERT INTO `user`(name, mail, password) VALUES('$name','$mail', '$matkhau')";
-   			$result = mysqli_query($conn,$sql);
+   	 		$sql="INSERT INTO `user`(roleID, name,birthday, mail, password, phoneNumber, avatar) VALUES(2,'$name','2021-01-01','$mail', '$matkhau',0,'Not update')";
+   			mysqli_query($conn,$sql);
+			// header("Location: index.php");
    	 	}
 		mysqli_free_result($kt);
-		mysqli_free_result($result);
+		// mysqli_free_result($result);
    	 }
    }
 }
