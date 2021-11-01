@@ -6,7 +6,13 @@
 <?php
     include 'top.php';
 ?>
-
+        <div class="grid">
+            <div class="row" id="content">
+                <div class="owl-carousel owl-theme advertisement">
+                    <img class="item" src="./assets/img/nhan_ads0000.jpg" alt="">
+                    <img class="item" src="./assets/img/nghia_ads0000.jpg" alt="">
+                    <div class="item"><h1>Quảng cáo 3</h1></div>
+                </div>
                 <div class="col-2 content-category">
                     <h3 class="category-heading"><i class="category-icon fal fa-list"></i> Danh mục</h3>
                     <ul style="list-style-type: none;" class="category-list">

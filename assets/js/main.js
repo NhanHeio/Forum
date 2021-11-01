@@ -192,3 +192,26 @@ $(document).ready(function() {
         });
     });
 });
+
+//Xóa bài trên trang cá Nhân
+$(document).ready(function() {
+    $(".btn-delete").click(function(event) {
+        
+        var idQuestion = $(this).attr("id");
+        event.preventDefault();
+        $.ajax({
+            url:"php/delete_question.php",
+            method:"POST",
+            data: {idQuestion:idQuestion},
+            dataType:'html',
+            success:function(data) 
+            {   
+                alert("Xóa bài viết thành công!");
+                window.location.reload();
+            },
+            error:function(data)
+            {
+            }
+        });
+    });
+});

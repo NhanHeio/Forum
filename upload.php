@@ -16,7 +16,8 @@ $users = mysqli_query($conn,"SELECT * FROM user WHERE name = '".$_SESSION["name"
          echo '<script type="text/javascript">alert("' . $msg . '")</script>';
       }
 $target_dir = "uploads/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$name = $user['UserID'] . ".jpg";
+$target_file = $target_dir . $name;
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -32,10 +33,10 @@ if(isset($_POST["submit"])) {
 }
 
 // Check if file already exists
-if (file_exists($target_file)) {
-  echo "Sorry, file already exists.";
-  $uploadOk = 0;
-}
+// if (file_exists($target_file)) {
+//   echo "Sorry, file already exists.";
+//   $uploadOk = 0;
+// }
 
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 500000) {
@@ -57,7 +58,7 @@ if ($uploadOk == 0) {
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
     $tymp=substr($target_file,8,-4);
-    $sql = " UPDATE user SET avatar='$tymp' WHERE name ='".$user['name']."'";
+    $sql = " UPDATE user SET avatar='$tymp' WHERE UserID ='".$user['UserID']."'";
     mysqli_query($conn,$sql);
    
      header("Location: personal.php");
