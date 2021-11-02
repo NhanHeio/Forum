@@ -12,9 +12,6 @@ $users = mysqli_query($conn,"SELECT * FROM user WHERE name = '".$_SESSION["name"
 ?>
 <?php
 
-  function phpAlert($msg) {
-         echo '<script type="text/javascript">alert("' . $msg . '")</script>';
-      }
 $target_dir = "uploads/";
 $name = $user['UserID'] . ".jpg";
 $target_file = $target_dir . $name;

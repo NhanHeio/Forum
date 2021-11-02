@@ -10,6 +10,7 @@
     $avatar1= $user['avatar'];
     $birthday=$user['birthday'];
     $phoneNumber=$user['phoneNumber'];
+    $roleID = $user['roleID'];
     if(isset($_POST['capnhat']))  {
         $birthday1=$_POST['birthday'];
         $phone=$_POST['phone'];
@@ -82,7 +83,11 @@
                         <!-- Question -->
                         <div class="pannel">
                         <?php
+                        if($roleID == 1){
+                            getDataAdmin();
+                        }else{
                             getDataIndex1($userID);
+                        }
                         
                         ?>
                         </div>     
