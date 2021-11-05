@@ -40,16 +40,16 @@
                 
                 <section class='content'>
                     <div class="content__header">
-                        <div class="content__header-user">
-                            <a href="#" class="user__avatar">
+                        <div class="grid_container">
+                            <a href="#" class="personal_avatar">
                                 <img src="uploads/<?php echo $avatar1 ?>.jpg" alt="">
                                 <div><?php echo $avatar1 ?></div>
                             </a>
-                            <div class='user__infor'>
+                            <div class="user_infor">
                                 <h2 class="user__name">
                                   <?php echo $_SESSION['name'] ?>
                                 </h2>
-                                <form method='POST'>
+                                <form method='POST' class="personal_all">
                                 <div class="user__infor-item user__time">
                                 
                                     <div>
@@ -65,17 +65,19 @@
                                     <button class="personal_capnhat" class='capnhat' id='capnhat' name='capnhat'>Cập nhật</button>
                                 </div>
                                 </form>
-                                <div class="user__infor-item user__location">
+                            </div>
+                                <div class="personal_upload">
                                     <form action='php/upload.php' method='post' enctype='multipart/form-data' class="personal_form">
                                         <div class='updateinfo' id='updateinfo'>
                                               Cập nhật ảnh:
-                                            <input type='file' name='fileToUpload' id='fileToUpload'>
-                                            <input style="width: 130px;" type='submit' value='Cập nhật ảnh' name='submit'>
                                         </div>
+                                        <div class="filetoupload">
+                                        <input type='file' name='fileToUpload' id='fileToUpload'>
+                                        </div>
+                                        <input  class="customcss" type='submit' value='Cập nhật ảnh' name='submit'>
                                     </form> 
                                 </div>
-                            </div>
-                        </div> 
+                            </div> 
                     </div>
                     
                    <h1 class="personal_allpost"> Tất cả bài viết </h1>

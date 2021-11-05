@@ -560,3 +560,42 @@ html{
 .personal_allpost{ 
     font-size: 30px;
 }
+.grid_container{
+    display: grid;
+     grid-template-columns: auto auto auto;
+    grid-template-rows: 80px 200px;
+    grid-gap: 10px;
+    
+     padding: 10px;
+}
+.user_infor,.personal_icon{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.personal_capnhat{
+    margin-top: 20px;
+    width: 100px;
+    height: 30px;
+    background-color: aliceblue;
+}
+.personal_all{
+    max-width: 300px;
+    text-align: center;
+}
+.personal_upload{
+    margin-top: 60px;
+    
+}
+.customcss{
+    margin-top: 20px;
+    width: 130px;
+    height: 30px;
+    background-color: aliceblue;
+}
+.filetoupload{
+    margin-top: 10px;
+}
+.personal_avatar img{
+    width: 200px;
+    height: 200px;
+}
