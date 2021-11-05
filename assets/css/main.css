@@ -560,3 +560,55 @@ html{
 .personal_allpost{ 
     font-size: 30px;
 }
+.grid_container{
+    display: grid;
+     grid-template-columns: auto auto auto;
+    grid-template-rows: 80px 200px;
+    grid-gap: 10px;
+    
+     padding: 10px;
+}
+.user_infor,.personal_icon{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.personal_capnhat{
+    margin-top: 20px;
+    width: 100px;
+    height: 30px;
+    background-color: aliceblue;
+}
+.personal_all{
+    max-width: 300px;
+    text-align: center;
+}
+.personal_upload{
+    margin-top: 60px;
+    
+}
+.customcss{
+    margin-top: 20px;
+}
+/* .customcss{
+    margin-top: 20px;
+    width: 180px;
+    height: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-shadow: 0px 1px 1px 0px #000;
+    background-image: linear-gradient(45deg,#1061b3,#3fe19a);
+    border: 2px solid #303030;
+    padding: 8px 34px;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0px 1px 2px 1px;
+    
+} */
+.filetoupload1{
+    margin-top: 10px;
+    
+}
+.personal_avatar img{
+    width: 200px;
+    height: 200px;
+}

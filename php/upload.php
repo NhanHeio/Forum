@@ -57,7 +57,6 @@ if ($uploadOk == 0) {
     $tymp=substr($target_file,11,-4);
     $sql = " UPDATE user SET avatar='$tymp' WHERE UserID ='".$user['UserID']."'";
     mysqli_query($conn,$sql);
-   
      header("Location: ../personal.php");
   } else {
     echo "Sorry, there was an error uploading your file.";
