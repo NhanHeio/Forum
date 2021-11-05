@@ -53,20 +53,20 @@
                                 <div class="user__infor-item user__time">
                                 
                                     <div>
-                                    <ion-icon name="calendar-sharp" style ="height: 20px; width:50px;"></ion-icon>
+                                    <ion-icon class="personal_icon" name="calendar-sharp" ></ion-icon>
                                          
-                                         <input name="birthday" style="border: 0px; background-color: #e5e6e7" value ="<?php echo $birthday ?>">
+                                         <input name="birthday" class="personal_birthday"  value ="<?php echo $birthday ?>">
                                     </div>
                                     <div>
-                                    <ion-icon name="call-sharp" style ="height: 20px; width:50px;"></ion-icon>   
+                                    <ion-icon class="personal_icon" name="call-sharp"></ion-icon>   
                                     
-                                    <input name="phone" style="border: 0px;background-color: #e5e6e7" value ="<?php echo $phoneNumber ?>">
+                                    <input class="personal_phone" name="phone" value ="<?php echo $phoneNumber ?>">
                                     </div>
-                                    <button style="width: 80px; height: 25px;" class='capnhat' id='capnhat' name='capnhat'>Cập nhật</button>
+                                    <button class="personal_capnhat" class='capnhat' id='capnhat' name='capnhat'>Cập nhật</button>
                                 </div>
                                 </form>
                                 <div class="user__infor-item user__location">
-                                    <form action='upload.php' method='post' enctype='multipart/form-data' style="font-size:20px;">
+                                    <form action='upload.php' method='post' enctype='multipart/form-data' class="personal_form">
                                         <div class='updateinfo' id='updateinfo'>
                                               Cập nhật ảnh:
                                             <input type='file' name='fileToUpload' id='fileToUpload'>
@@ -78,7 +78,7 @@
                         </div> 
                     </div>
                     
-                   <h1 style="font-size: 30px;"> Tất cả bài viết </h1>
+                   <h1 class="personal_allpost"> Tất cả bài viết </h1>
                     <div class="content__pannel">
                         <!-- Question -->
                         <div class="pannel">
