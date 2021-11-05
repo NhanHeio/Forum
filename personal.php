@@ -71,8 +71,8 @@
                                         <div class='updateinfo' id='updateinfo'>
                                               Cập nhật ảnh:
                                         </div>
-                                        <div class="filetoupload">
-                                        <input type='file' name='fileToUpload' id='fileToUpload'>
+                                        <div class="filetoupload1">
+                                        <input type='file' name='fileToUpload' id='fileToUpload' class="filetoupload">
                                         </div>
                                         <input  class="customcss" type='submit' value='Cập nhật ảnh' name='submit'>
                                     </form> 
