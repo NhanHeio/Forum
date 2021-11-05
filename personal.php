@@ -66,7 +66,7 @@
                                 </div>
                                 </form>
                                 <div class="user__infor-item user__location">
-                                    <form action='upload.php' method='post' enctype='multipart/form-data' style="font-size:20px;">
+                                    <form action='php/upload.php' method='post' enctype='multipart/form-data' style="font-size:20px;">
                                         <div class='updateinfo' id='updateinfo'>
                                               Cập nhật ảnh:
                                             <input type='file' name='fileToUpload' id='fileToUpload'>

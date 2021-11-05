@@ -10,7 +10,7 @@
     	$r = mysqli_fetch_assoc($result);
 		$userID = $r['UserID'];
 		$name = $r['name'];
-		$avt = $r['avatar'];
+		$avt = $r['avatar'].".jpg";
     	if(mysqli_num_rows($result)!=0){
 			$_SESSION["userID"] = $userID;
             $_SESSION["name"]= $name;

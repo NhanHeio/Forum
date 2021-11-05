@@ -1,8 +1,8 @@
 
 <?php 
   session_start();
-  require_once './php/connect.php';
-  require './php/php_function.php';
+  require_once 'connect.php';
+  require 'php_function.php';
   $_SESSION['index'];
 
 $users = mysqli_query($conn,"SELECT * FROM user WHERE name = '".$_SESSION["name"]."' ");
@@ -12,7 +12,7 @@ $users = mysqli_query($conn,"SELECT * FROM user WHERE name = '".$_SESSION["name"
 ?>
 <?php
 
-$target_dir = "uploads/";
+$target_dir = "../uploads/";
 $name = $user['UserID'] . ".jpg";
 $target_file = $target_dir . $name;
 $uploadOk = 1;
@@ -54,11 +54,11 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-    $tymp=substr($target_file,8,-4);
+    $tymp=substr($target_file,11,-4);
     $sql = " UPDATE user SET avatar='$tymp' WHERE UserID ='".$user['UserID']."'";
     mysqli_query($conn,$sql);
    
-     header("Location: personal.php");
+     header("Location: ../personal.php");
   } else {
     echo "Sorry, there was an error uploading your file.";
   }

@@ -135,7 +135,7 @@ $(document).ready(function() {
             success:function(data) 
             {   
                 $("#search-result").html(data); 
-                alert("OK");
+                //alert("OK");
             },
             error:function(data)
             {
