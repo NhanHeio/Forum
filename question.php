@@ -63,6 +63,7 @@
                             ?>
                             <div>
                                 <form action="./php/postcomment.php" method="POST" style="width:max-width">
+                                    <input type="hidden" name="idQuestion" value="<?php echo $_GET["idQuestion"]?>">
                                     <textarea name="comment"></textarea>
                                         <div class="button-class">
                                             <button style="margin:10px" name="submit" type="submit"class="btn-submit">Post</button>
